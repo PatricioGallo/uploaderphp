@@ -1,21 +1,36 @@
 <?php
-include("config/db.php");
+session_start();
+
+
+if($_SESSION){  //si ya esta iniciada la sesion
+header("Location:pages/inicio.php");
+
+}
+
+else{ //si no se inicia sesion todo el programa
+include("config/db.php"); //incluyo la base de datos
 $flag=0;
-if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){
+
+
+if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){ //si no esta vacio el post
 
     $listaSQL= $conexion ->prepare("SELECT * FROM login");
     $listaSQL ->execute();
     $listatabla = $listaSQL ->fetchALL (PDO::FETCH_ASSOC);
     $flag=0;
 
+
       foreach ($listatabla as $lista) {
          if ($lista['user']== $_POST['user'] &&  $lista['pswd']== $_POST['pswd']) {
            $flag=1;
+           $_SESSION["autorizado"] = true;
+           $_SESSION["id"]=$lista["id"];
+           session_regenerate_id();
          }
       }
 
         if ($flag==1) {
-          header("Location:pages/inicio.html");
+          header("Location:pages/inicio.php");
         }
         else {
           $flag=2;
@@ -64,7 +79,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){
               echo "<h4>ERROR!, intenta de nuevo</h4>";
             }
          ?>
-        <h5>No soy un usuario registrado</h5><a href="pages/perfil.html">Registrarse aqui</a>
+        <h5>No soy un usuario registrado</h5><a href="pages/perfil.php">Registrarse aqui</a>
       </div>
 
       </form>
@@ -81,3 +96,5 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){
 </body>
 
 </html>
+
+<?php } ?>

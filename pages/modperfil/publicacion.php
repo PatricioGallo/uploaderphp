@@ -1,3 +1,25 @@
+<?php
+session_start(); //incio de cesion
+include("../../config/db.php"); //incluir database
+include("itemslogin.php"); //incluir items del login
+
+if($_SESSION["autorizado"] == TRUE){
+
+include("verificar.php"); //verificacion de inicio de secion y caducidad
+
+
+if(!empty ($_POST['contenido']) ){ //si no esta vacio el post
+
+  $contenido = $_POST['contenido'];
+  $listaSQL= $conexion ->prepare("INSERT INTO `publicaciones` (`id_user`, `user`, `nombre`, `apellido`, `contenido`) VALUES ( '$id', '$usuario', '$nombre_user', '$apellido_user', '$contenido')");
+  $listaSQL ->execute();
+  header("Location:../inicio.php");
+}
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +39,9 @@
 
   <header>
     <div class="header_titulo">
-      <h1> <a href="../inicio.html"> Uploader </a></h1>
+      <h1> <a href="../inicio.php"> Uploader </a></h1>
     </div>
-    <h2> <a href="../inicio.html"> Volver </a></h2>
+    <h2> <a href="../inicio.php"> Volver </a></h2>
   </header>
 
   <div class="cuerpo">
@@ -31,18 +53,18 @@
       </div>
 
       <div class="cuerpo_linea"></div>
-        <form class="" action="#" method="post">
+        <form  action="publicacion.php" method="post">
 
       <div class="cuerpo_publicacionPerfil">
         <a href="../perfil.html"><img src="../../media/perfil.jpg" alt=""></a>
-        <h1>usuario</h1>
+        <h1><?php echo $nombre_user." ".$apellido_user; ?></h1>
       </div>
       <div class="cuerpo_linea"></div>
       <div class="publicacion2_formulario">
 
-          <textarea name="name" rows="8" cols="80" placeholder="¿Que estas pensando?"></textarea>
+          <textarea name="contenido" rows="8" cols="80" placeholder="¿Que estas pensando?"></textarea>
           <div class="cuerpo_linea"></div>
-          <button type="button" name="button">Publicar</button>
+          <button type="submit" name="button">Publicar</button>
         </form>
       </div>
 
@@ -53,3 +75,9 @@
 </body>
 
 </html>
+
+<?php }
+
+else {
+  header("Location:../index.php");
+} ?>

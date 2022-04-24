@@ -1,3 +1,18 @@
+<?php
+
+
+session_start(); //incio de cesion
+include("../config/db.php"); //incluir database
+include("modperfil/itemslogin.php"); //incluir items del login
+
+if($_SESSION["autorizado"] == TRUE){
+
+include("modperfil/verificar.php"); //verificacion de inicio de secion y caducidad
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +31,9 @@
 <body>
   <header>
     <div class="header_titulo">
-      <h1> <a href="inicio.html"> Uploader </a></h1>
+      <h1> <a href="inicio.php"> Uploader </a></h1>
     </div>
-
+      <h2> <a href="modperfil/cerrar.php">Cerrar</a></h2>
   </header>
 
   <div class="cuerpo">
@@ -35,7 +50,7 @@
 
     <div class="cuerpo_debajoPortada">
       <div class="cuerpo_usuario">
-        <h2>Usuario</h2>
+        <h2><?php echo $nombre_user." ".$apellido_user; ?> </h2>
       </div>
       <a href="modperfil/editportada.html">  <button type="button" name="button">Editar Perfil</button></a>
       <div class="cuerpo_linea"></div>
@@ -185,3 +200,8 @@
 </body>
 
 </html>
+<?php }
+
+else {
+  header("Location:../index.php");
+} ?>
