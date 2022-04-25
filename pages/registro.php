@@ -20,9 +20,41 @@ if ($_POST['pswd'] ==  $_POST['pswd2'] ){
   $pswd = $_POST['pswd'];
   $nombre = $_POST['nombre'];
   $apellido = $_POST['apellido'];
-  $listaSQL= $conexion ->prepare("INSERT INTO `login` (`user`, `pswd`, `nombre`, `apellido`) VALUES ( '$user', '$pswd', '$nombre', '$apellido')");
+  $id;
+  $listaSQL= $conexion ->prepare("INSERT INTO `login` (`user`, `pswd`, `nombre`, `apellido`) VALUES ( '$user', '$pswd', '$nombre', '$apellido')  ");
   $listaSQL ->execute();
-  header("Location:inicio.php");
+
+
+  $listaSQL= $conexion ->prepare("SELECT * FROM login");
+  $listaSQL ->execute();
+  $listatabla = $listaSQL ->fetchALL (PDO::FETCH_ASSOC);
+
+    foreach ($listatabla as $lista) {
+
+        if($user == $lista['user']){
+        $id= $lista['id'];
+        }
+
+        $path = "user/".$id;
+        $path2 = "user/".$id."/perfil";
+        $path3 = "user/".$id."/media";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+            mkdir($path2, 0777, true);
+            mkdir($path3, 0777, true);
+          }
+        }
+
+$fuente = "../media/perfil/perfil.jpg";
+$fuente2 ="../media/perfil/portada2.jpg";
+$destino = "user/".$id."/perfil/perfil.jpg";
+$destino2 = "user/".$id."/perfil/portada2.jpg";
+
+
+copy($fuente, $destino);
+copy($fuente2, $destino2);
+
+header("Location:inicio.php");
 
 }
 

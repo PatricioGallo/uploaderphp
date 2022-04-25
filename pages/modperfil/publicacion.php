@@ -13,7 +13,15 @@ if(!empty ($_POST['contenido']) ){ //si no esta vacio el post
   $contenido = $_POST['contenido'];
   $listaSQL= $conexion ->prepare("INSERT INTO `publicaciones` (`id_user`, `user`, `nombre`, `apellido`, `contenido`) VALUES ( '$id', '$usuario', '$nombre_user', '$apellido_user', '$contenido')");
   $listaSQL ->execute();
-  header("Location:../inicio.php");
+
+include("modperfil/itemslogin.php"); //incluir items del login
+  $path = "user/$id";
+  if (!file_exists($path)) {
+      mkdir($path, 0777, true);
+  }
+
+header("Location:../inicio.php");
+
 }
 
  ?>
@@ -56,7 +64,7 @@ if(!empty ($_POST['contenido']) ){ //si no esta vacio el post
         <form  action="publicacion.php" method="post">
 
       <div class="cuerpo_publicacionPerfil">
-        <a href="../perfil.html"><img src="../../media/perfil.jpg" alt=""></a>
+        <a href="../perfil.html"><img src="<?php echo "../user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
         <h1><?php echo $nombre_user." ".$apellido_user; ?></h1>
       </div>
       <div class="cuerpo_linea"></div>

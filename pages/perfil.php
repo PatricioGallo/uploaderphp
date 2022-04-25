@@ -4,6 +4,7 @@
 session_start(); //incio de cesion
 include("../config/db.php"); //incluir database
 include("modperfil/itemslogin.php"); //incluir items del login
+include("modperfil/itemspubli.php");//incluir items de la publicacion
 
 if($_SESSION["autorizado"] == TRUE){
 
@@ -41,10 +42,10 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
     <div class="cuerpo_portada">
 
       <div class="imagen_portada">
-        <img src="../media/perfil/portada2.jpg" alt="">
+        <img src=" <?php echo "user/".$id."/perfil/portada2.jpg" ?> " alt="">
       </div>
       <div class="portada_perfil">
-        <img src="../media/perfil/perfil.jpg" alt="">
+        <img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt="">
       </div>
     </div>
 
@@ -78,54 +79,42 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
     <a href="modperfil/subir.html">  <button type="button" name="button">Subir archivo</button></a>
 
 
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
+    <?php
 
-          </div>
-          <div class="archivos_footer">
+    foreach ($listatabla as $lista) {
 
-          </div>
-      </div>
+      $nombre_pu= $lista['nombre'];
+      $apellido_pu= $lista['apellido'];
+      $mg= $lista['mg'];
+      $contenido= $lista['contenido'];
+      $id_user = $lista['id_user'];
+      ?>
+
+<?php if ($id_user == $id){ ?>
 
 
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
-
-          </div>
-          <div class="archivos_footer">
-
-          </div>
-      </div>
 
       <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
+        <div class="archivos_perfil">
+          <img src="<?php echo "user/".$id_user."/perfil/perfil.jpg" ?>" alt="">
+          <h4> <?php echo $nombre_pu." ".$apellido_pu; ?> </h4>
+        </div>
+        <div class="archivos_contenido">
+            <?php echo $contenido; ?>
+        </div>
+        <div class="archivos_footer">
 
-          </div>
-          <div class="archivos_footer">
-
-          </div>
+        </div>
       </div>
+<?php } ?>
 
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
+    <?php }?>
 
-          </div>
-          <div class="archivos_footer">
 
-          </div>
-      </div>
+
+
+
+
 
 
     </div>
