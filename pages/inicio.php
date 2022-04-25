@@ -1,12 +1,12 @@
 <?php
 session_start();
 include("../config/db.php"); //incluir database
-include("modperfil/itemslogin.php"); //incluir items del login
-include("modperfil/itemspubli.php");//incluir items de la publicacion
+include("php/itemslogin.php"); //incluir items del login
+include("php/itemspubli.php");//incluir items de la publicacion
 
 if($_SESSION["autorizado"] == TRUE){
 
-include("modperfil/verificar.php"); //verificacion de inicio de secion y caducidad
+include("php/verificar.php"); //verificacion de inicio de secion y caducidad
 
 
  ?>

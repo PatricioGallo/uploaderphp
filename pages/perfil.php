@@ -3,12 +3,12 @@
 
 session_start(); //incio de cesion
 include("../config/db.php"); //incluir database
-include("modperfil/itemslogin.php"); //incluir items del login
-include("modperfil/itemspubli.php");//incluir items de la publicacion
+include("php/itemslogin.php"); //incluir items del login
+include("php/itemspubli.php");//incluir items de la publicacion
 
 if($_SESSION["autorizado"] == TRUE){
 
-include("modperfil/verificar.php"); //verificacion de inicio de secion y caducidad
+include("php/verificar.php"); //verificacion de inicio de secion y caducidad
 
 
  ?>
@@ -34,7 +34,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
     <div class="header_titulo">
       <h1> <a href="inicio.php"> Uploader </a></h1>
     </div>
-      <h2> <a href="modperfil/cerrar.php">Cerrar</a></h2>
+      <h2> <a href="php/cerrar.php">Cerrar</a></h2>
   </header>
 
   <div class="cuerpo">

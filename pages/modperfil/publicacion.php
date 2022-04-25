@@ -1,11 +1,11 @@
 <?php
 session_start(); //incio de cesion
 include("../../config/db.php"); //incluir database
-include("itemslogin.php"); //incluir items del login
+include("../php/itemslogin.php"); //incluir items del login
 
 if($_SESSION["autorizado"] == TRUE){
 
-include("verificar.php"); //verificacion de inicio de secion y caducidad
+include("../php/verificar.php"); //verificacion de inicio de secion y caducidad
 
 
 if(!empty ($_POST['contenido']) ){ //si no esta vacio el post
