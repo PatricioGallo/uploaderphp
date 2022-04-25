@@ -33,7 +33,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
       <h1> <a href="#"> Uploader </a></h1>
     </div>
     <div class="header_perfil">
-      <a href="perfil.php"><img src="../media/perfil.jpg" alt=""></a>
+      <a href="perfil.php"><img src="../media/perfil/perfil.jpg" alt=""></a>
     </div>
   </header>
 
@@ -42,7 +42,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
 
     <div class="cuerpo_publicacion">
       <div class="publicacion_foto">
-        <a href="perfil.html"><img src="../media/perfil.jpg" alt=""></a>
+        <a href="perfil.html"><img src="../media/perfil/perfil.jpg" alt=""></a>
       </div>
 
       <div class="publicacion_texto">
@@ -66,7 +66,7 @@ foreach ($listatabla as $lista) {
 
   <div class="cuerpo_archivossubidos">
     <div class="archivos_perfil">
-      <img src="../media/perfil.jpg" alt="">
+      <img src="../media/perfil/perfil.jpg" alt="">
       <h4> <?php echo $nombre_pu." ".$apellido_pu; ?> </h4>
     </div>
     <div class="archivos_contenido">

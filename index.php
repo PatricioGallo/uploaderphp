@@ -79,7 +79,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){ //si no esta vacio el po
               echo "<h4>ERROR!, intenta de nuevo</h4>";
             }
          ?>
-        <h5>No soy un usuario registrado</h5><a href="pages/perfil.php">Registrarse aqui</a>
+        <h5>No soy un usuario registrado</h5><a href="pages/registro.php">Registrarse aqui</a>
       </div>
 
       </form>

@@ -41,10 +41,10 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
     <div class="cuerpo_portada">
 
       <div class="imagen_portada">
-        <img src="../media/portada2.jpg" alt="">
+        <img src="../media/perfil/portada2.jpg" alt="">
       </div>
       <div class="portada_perfil">
-        <img src="../media/perfil.jpg" alt="">
+        <img src="../media/perfil/perfil.jpg" alt="">
       </div>
     </div>
 
@@ -80,7 +80,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
 
       <div class="cuerpo_archivossubidos">
           <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
+              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
           </div>
           <div class="archivos_contenido">
 
@@ -93,7 +93,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
 
       <div class="cuerpo_archivossubidos">
           <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
+              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
           </div>
           <div class="archivos_contenido">
 
@@ -105,7 +105,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
 
       <div class="cuerpo_archivossubidos">
           <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
+              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
           </div>
           <div class="archivos_contenido">
 
@@ -117,7 +117,7 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
 
       <div class="cuerpo_archivossubidos">
           <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
+              <img src="../media/perfil/perfil.jpg" alt=""> <h4>Usuario</h4>
           </div>
           <div class="archivos_contenido">
 
@@ -126,68 +126,6 @@ include("modperfil/verificar.php"); //verificacion de inicio de secion y caducid
 
           </div>
       </div>
-
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
-
-          </div>
-          <div class="archivos_footer">
-
-          </div>
-      </div>
-
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
-
-          </div>
-          <div class="archivos_footer">
-
-          </div>
-      </div>
-
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
-
-          </div>
-          <div class="archivos_footer">
-
-          </div>
-      </div>
-
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
-
-          </div>
-          <div class="archivos_footer">
-
-          </div>
-      </div>
-
-      <div class="cuerpo_archivossubidos">
-          <div class="archivos_perfil">
-              <img src="../media/perfil.jpg" alt=""> <h4>Usuario</h4>
-          </div>
-          <div class="archivos_contenido">
-
-          </div>
-          <div class="archivos_footer">
-
-          </div>
-      </div>
-
-
 
 
     </div>
