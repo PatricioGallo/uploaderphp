@@ -48,8 +48,13 @@ include("../../php/itemspubli.php");//incluir items de la publicacion
       <div class="cuerpo_usuario">
         <h2><?php echo $nombre_perfil." ".$apellido_perfil; ?> </h2>
       </div>
+
+<?php if ($id_perfil == $_SESSION["id"]) { ?>
       <a href="../../modperfil/editportada.php">  <button type="button" name="button">Editar Perfil</button></a>
+<?php  }  ?>
+
       <div class="cuerpo_linea"></div>
+
       <div class="cuerpo_informacion">
 
         <ul>
@@ -68,10 +73,21 @@ include("../../php/itemspubli.php");//incluir items de la publicacion
 
         </ul>
       </div>
-      <button type="button" name="button">Editar detalles</button>
+
+      <?php if ($id_perfil == $_SESSION["id"]) { ?>
+
+                  <button type="button" name="button">Editar detalles</button>
+      <?php  }  ?>
+
+
+
       <div class="cuerpo_linea"></div>
 
-    <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
+
+      <?php if ($id_perfil == $_SESSION["id"]) { ?>
+              <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
+      <?php  }  ?>
+
 
 
     <?php
