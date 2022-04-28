@@ -47,12 +47,27 @@ if ($_POST['pswd'] ==  $_POST['pswd2'] ){
 
 $fuente = "../media/perfil/perfil.jpg";
 $fuente2 ="../media/perfil/portada2.jpg";
+$fuente3 = "perfil.php";
+
 $destino = "user/".$id."/perfil/perfil.jpg";
 $destino2 = "user/".$id."/perfil/portada2.jpg";
-
+$destino3 ="user/".$id."/".$user.".php";
 
 copy($fuente, $destino);
 copy($fuente2, $destino2);
+copy($fuente3, $destino3);
+
+
+$fuentew="user/".$id."/".$user.".php";
+$contenidow="<?php $"."id_perfil=".$id.";?>";
+$fp = fopen($fuentew, 'r+');
+fwrite($fp, $contenidow);
+fclose($fp);
+
+// ¡el contenido de 'data.txt' ahora es 123 y no 23!
+
+
+
 
 header("Location:inicio.php");
 

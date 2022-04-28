@@ -33,7 +33,7 @@ include("php/verificar.php"); //verificacion de inicio de secion y caducidad
       <h1> <a href="#"> Uploader </a></h1>
     </div>
     <div class="header_perfil">
-      <a href="perfil.php"><img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
+      <a href=" <?php echo "user/".$id."/".$usuario.".php"; ?> "><img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
     </div>
   </header>
 
@@ -42,7 +42,7 @@ include("php/verificar.php"); //verificacion de inicio de secion y caducidad
 
     <div class="cuerpo_publicacion">
       <div class="publicacion_foto">
-        <a href="perfil.php"><img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
+        <a href="<?php echo "user/".$id."/".$usuario.".php"; ?>  "><img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
       </div>
 
       <div class="publicacion_texto">
@@ -62,15 +62,17 @@ foreach ($listatabla as $lista) {
   $mg= $lista['mg'];
   $contenido= $lista['contenido'];
   $id_user = $lista['id_user'];
+  $user_pu = $lista['user'];
   ?>
 
   <div class="cuerpo_archivossubidos">
     <div class="archivos_perfil">
-      <img src="<?php echo "user/".$id_user."/perfil/perfil.jpg" ?>" alt="">
-      <h4> <?php echo $nombre_pu." ".$apellido_pu; ?> </h4>
+    <a href="<?php echo "user/".$id_user."/".$user_pu.".php"; ?> ">  <img src="<?php echo "user/".$id_user."/perfil/perfil.jpg" ?>" alt=""> </a>
+    <a href=" <?php echo "user/".$id_user."/".$user_pu.".php"; ?> ">  <h4> <?php echo $nombre_pu." ".$apellido_pu; ?> </h4></a>
     </div>
     <div class="archivos_contenido">
-        <?php echo $contenido; ?>
+
+        <?php echo $contenido; ?>  
     </div>
     <div class="archivos_footer">
 

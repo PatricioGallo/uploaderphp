@@ -1,24 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $id_perfil=1;?>
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
