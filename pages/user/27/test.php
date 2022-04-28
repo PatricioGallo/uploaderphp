@@ -48,7 +48,7 @@ include("../../php/itemspubli.php");//incluir items de la publicacion
       <div class="cuerpo_usuario">
         <h2><?php echo $nombre_perfil." ".$apellido_perfil; ?> </h2>
       </div>
-      <a href="../../modperfil/editportada.html">  <button type="button" name="button">Editar Perfil</button></a>
+      <a href="../../modperfil/editportada.php">  <button type="button" name="button">Editar Perfil</button></a>
       <div class="cuerpo_linea"></div>
       <div class="cuerpo_informacion">
 
@@ -71,7 +71,7 @@ include("../../php/itemspubli.php");//incluir items de la publicacion
       <button type="button" name="button">Editar detalles</button>
       <div class="cuerpo_linea"></div>
 
-    <a href="../../modperfil/subir.html">  <button type="button" name="button">Subir archivo</button></a>
+    <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
 
 
     <?php

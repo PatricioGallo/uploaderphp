@@ -1,3 +1,16 @@
+<?php
+session_start();
+include("../../config/db.php"); //incluir database
+include("../php/itemslogin.php"); //incluir items del login
+
+if($_SESSION["autorizado"] == TRUE){
+
+include("../php/verificar.php"); //verificacion de inicio de secion y caducidad
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +30,9 @@
 
   <header>
     <div class="header_titulo">
-      <h1> <a href="../inicio.html"> Uploader </a></h1>
+      <h1> <a href="../inicio.php"> Uploader </a></h1>
     </div>
-    <h2> <a href="../perfil.php"> Volver </a></h2>
+    <h2> <a href="../user/<?php echo $id."/".$usuario.".php" ?>"> Volver </a></h2>
   </header>
 
   <div class="cuerpo">
@@ -34,8 +47,8 @@
       <form class="" action="#" method="post">
 
         <div class="cuerpo_publicacionPerfil">
-          <a href="perfil.html"><img src="../../media/perfil.jpg" alt=""></a>
-          <h1>usuario</h1>
+          <a href="perfil.html"><img src="../user/<?php echo $id."/perfil/perfil.jpg"?>" alt=""></a>
+          <h1><?php echo $nombre_user." ".$apellido_user; ?></h1>
         </div>
         <div class="cuerpo_linea"></div>
         <div class="publicacion2_formulario">
@@ -60,3 +73,8 @@
 </body>
 
 </html>
+<?php }
+
+else {
+  header("Location:../index.php");
+} ?>
