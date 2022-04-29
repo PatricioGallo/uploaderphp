@@ -5,7 +5,7 @@ include("../../../config/db.php"); //incluir database
 //include("../../php/itemslogin.php"); //incluir items del login
 include("../../php/verperfil.php");//incluir items del usuario de la web perfil
 include("../../php/itemspubli.php");//incluir items de la publicacion
-include("../../php/contadordePubli.php");//incluir items de la publicacion
+include("../../php/contadordePubli.php");//incluir contador de publicacion
 
  ?>
 
