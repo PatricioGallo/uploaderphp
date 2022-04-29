@@ -22,12 +22,19 @@
 
 
 
+
+
+
+
+
+
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
 //include("../../php/itemslogin.php"); //incluir items del login
-include("../../php/verperfil.php");//incluir items de la publicacion
+include("../../php/verperfil.php");//incluir items del usuario de la web perfil
 include("../../php/itemspubli.php");//incluir items de la publicacion
+include("../../php/contadordePubli.php");//incluir items de la publicacion
 
  ?>
 
@@ -82,16 +89,20 @@ include("../../php/itemspubli.php");//incluir items de la publicacion
 
         <ul>
           <li>
-            <p>Estudió Electronics and Communication engineering en UNT Argentina</p>
+            <p>Nacionalidad: <?php echo " ".$nacionalidad; ?></p>
           </li>
           <li>
-            <p>Estudió en Instituto Tecnico Salesiano Lorenzo Massa</p>
+            <p>Tipo de cuenta: <?php echo " ".$tipoDeCuenta; ?></p>
           </li>
           <li>
-            <p>Vive en San Miguel de Tucumán</p>
+            <p>Cantidad de gigas disponibles: <?php echo " ".$contador_gigas; ?></p>
           </li>
           <li>
-            <p>Soltero</p>
+            <p>Cantidad publicaciones realizadas: <?php echo " ".$contador_publicaciones; ?></p>
+          </li>
+
+          <li>
+            <p>Cantidad de archivos subidos: <?php echo " ".$contador_archivosSubidos; ?></p>
           </li>
 
         </ul>

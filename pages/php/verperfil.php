@@ -10,6 +10,10 @@ $listatabla = $listaSQL ->fetchALL (PDO::FETCH_ASSOC);
  $nombre_perfil= $lista['nombre'];
  $apellido_perfil= $lista['apellido'];
  $usuario_perfil= $lista['user'];
+ $tipoDeCuenta = $lista['tipoDeCuenta'];
+ $cantidadPubli = $lista['cantidadPubli'];
+  $nacionalidad = $lista['nacionalidad'];
+   $cantidadGigas = $lista['cantidadGigas'];
 }
 }
 
