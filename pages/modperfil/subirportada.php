@@ -55,16 +55,18 @@ $subido=0;
       <div class="cuerpo_linea"></div>
       <form class="" action="subirportada.php" method="post" enctype="multipart/form-data">
 
-        <div class="cuerpo_publicacionPerfil">
-          <a href="perfil.html"><img src="../user/<?php echo $id."/perfil/portada2.jpg"?>" alt=""></a>
+        <div class="cuerpo_publicacionPerfil" id="cuerpo_publicacionPerfilMod" >
+          <a href="perfil.php"><img src="../user/<?php echo $id."/perfil/portada2.jpg"?>" alt="" id="imagenPortada" ></a>
         </div>
         <div class="cuerpo_linea"></div>
         <div class="publicacion2_formulario">
-
-          <h1>Aqui puedes seleccionar tu nueva foto de portada</h1>
-
+          <div class="publicacion_formularioTitulo">
+            <h1>Aqui puedes seleccionar tu nueva foto de portada</h1>
+          </div>
           <?php if($subido==1){ ?>
-          <input type="file" name="portada" value="">
+            <div class="publicacion_cajaInput">
+              <input type="file" name="portada" value="">
+            </div>
         <!--  <button type="button" name="button" id="subir">Seleccionar</button> -->
 <?php }else if($subido==0){
   echo "La foto de portada se guardo con exito";

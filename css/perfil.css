@@ -163,7 +163,7 @@ color:white;
 }
 
 .publicacion2_formulario label{
-  margin-left: 35px;
+  margin-left: 40px;
   color: white;
   font-size: 18px;
 }
@@ -188,6 +188,38 @@ color:white;
   background-color: #6D6A6A;
   padding: 10px;
 }
+
+#descripcion_archivoText{
+  width: 80%;
+  height: 100px;
+  background-color: white;
+  margin-left: 10%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.publicacion_cajaInput{
+  width: 80%;
+  height: 40px;
+  margin-left: 10%;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.publicacion2_formulario input[type=file]{
+  width: 80%;
+  margin-top: 10px;
+  color: white;
+  margin-left: 10%;
+}
+
+.publicacion2_formulario p{
+  color: white;
+  text-align: center;
+}
+
 .publicacion2_formulario textarea::placeholder{
 color:white;
 }
@@ -222,10 +254,16 @@ height: 60px;
   font-size: 20px;
   color: white;
   margin-top: 13px;
-  margin-left: 15px;
+  margin-left: 3%;
+  margin-right:  3%;
   font-weight: normal;
 }
 
+
+.publicacion_formularioTitulo {
+  width: 90%;
+  margin-left: 5%;
+}
 
 .portada_perfil {
   width: 150px;
@@ -360,11 +398,41 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
-.cuerpo_botonesDeEdicion button {
-  font-size: 18px;
+.cuerpo_botonesDeEdicion a {
+width: 50%;
   margin-left: 10px;
+
 }
+
+
+
+#imagenPerfil{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+#cuerpo_publicacionPerfilMod{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+
+}
+
+#imagenPortada{
+  width: 90%;
+  height: 200px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-left: 5%;
+}
+
 
 /*--------------- fin cuerpo-------------*/
