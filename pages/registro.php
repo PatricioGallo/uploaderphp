@@ -95,7 +95,7 @@ header("Location:inicio.php");
 
   <header>
     <div class="header_titulo">
-      <h1>Uploader</h1>
+         <h1>  <a href="../index.php">Uploader</a></h1>
     </div>
   </header>
 

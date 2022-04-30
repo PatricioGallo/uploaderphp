@@ -56,7 +56,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){ //si no esta vacio el po
 
   <header>
     <div class="header_titulo">
-      <h1>Uploader</h1>
+     <h1>  <a href="index.php">Uploader</a></h1>
     </div>
   </header>
 
