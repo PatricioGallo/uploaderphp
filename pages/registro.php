@@ -65,10 +65,10 @@ include("php/registrarse.php"); //incluyo la base de datos
             if ($flag==1) {
               echo "<h4>ERROR!. No dejes campos sin rellenar.</h4>";
             } elseif ($flag==2) {
-              echo "<h4>ERROR!. Las contraseñas no coinciden.</h4>";
+              echo "<h4>ERROR! Las contraseñas no coinciden.</h4>";
             }
             elseif ($flag==3) {
-              echo "<h4>ERROR!. El usuario elegido ya se encuentra registrado.</h4>";
+              echo "<h4>ERROR! El usuario elegido ya se encuentra registrado.</h4>";
             }
 
 ?>

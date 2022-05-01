@@ -133,3 +133,9 @@ footer {
   color: white;
   font-size: 12px;
 }
+
+.footer_legenda h5 a{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
