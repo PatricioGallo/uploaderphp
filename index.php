@@ -76,7 +76,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){ //si no esta vacio el po
       <div class="formulario_registro">
         <?php
             if ($flag==2) {
-              echo "<h4>ERROR!, intenta de nuevo</h4>";
+              echo "<h4>ERROR!, Intenta nuevamente</h4>";
             }
          ?>
         <h5>No soy un usuario registrado</h5><a href="pages/registro.php">Registrarse aqui</a>
@@ -89,7 +89,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){ //si no esta vacio el po
 
   <footer>
     <div class="footer_legenda">
-      <h5>2022 - Todos los derechos reservados</h5>
+      <h5>2022 - <a href="#">Patricio Gallo</a>. Todos los derechos reservados</h5>
     </div>
 
   </footer>

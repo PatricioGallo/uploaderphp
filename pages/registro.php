@@ -9,73 +9,10 @@ header("Location:inicio.php");
 
 else{ //si no se inicia sesion todo el programa
 include("../config/db.php"); //incluyo la base de datos
-$flag=2;
+$flag=0;
+include("php/registrarse.php"); //incluyo la base de datos
 
 
-if(!empty ($_POST['user']) && !empty ($_POST['pswd']) && !empty ($_POST['nombre']) && !empty ($_POST['apellido']) && !empty ($_POST['pswd2']) ){ //si no esta vacio el post
-
-if ($_POST['pswd'] ==  $_POST['pswd2'] ){
-
-  $user = $_POST['user'];
-  $pswd = $_POST['pswd'];
-  $nombre = $_POST['nombre'];
-  $apellido = $_POST['apellido'];
-  $id;
-  $listaSQL= $conexion ->prepare("INSERT INTO `login` (`user`, `pswd`, `nombre`, `apellido`) VALUES ( '$user', '$pswd', '$nombre', '$apellido')  ");
-  $listaSQL ->execute();
-
-
-  $listaSQL= $conexion ->prepare("SELECT * FROM login");
-  $listaSQL ->execute();
-  $listatabla = $listaSQL ->fetchALL (PDO::FETCH_ASSOC);
-
-    foreach ($listatabla as $lista) {
-
-        if($user == $lista['user']){
-        $id= $lista['id'];
-        }
-
-        $path = "user/".$id;
-        $path2 = "user/".$id."/perfil";
-        $path3 = "user/".$id."/media";
-        if (!file_exists($path)) {
-            mkdir($path, 0777, true);
-            mkdir($path2, 0777, true);
-            mkdir($path3, 0777, true);
-          }
-        }
-
-$fuente = "../media/perfil/perfil.jpg";
-$fuente2 ="../media/perfil/portada2.jpg";
-$fuente3 = "perfil.php";
-
-$destino = "user/".$id."/perfil/perfil.jpg";
-$destino2 = "user/".$id."/perfil/portada2.jpg";
-$destino3 ="user/".$id."/".$user.".php";
-
-copy($fuente, $destino);
-copy($fuente2, $destino2);
-copy($fuente3, $destino3);
-
-
-$fuentew="user/".$id."/".$user.".php";
-$contenidow="<?php $"."id_perfil=".$id.";?>";
-$fp = fopen($fuentew, 'r+');
-fwrite($fp, $contenidow);
-fclose($fp);
-
-// ¡el contenido de 'data.txt' ahora es 123 y no 23!
-
-
-
-
-header("Location:inicio.php");
-
-}
-
-
-
-}
  ?>
 
 <!DOCTYPE html>
@@ -124,7 +61,17 @@ header("Location:inicio.php");
       <button type="submit" name="button">Registrar</button>
 
       <div class="formulario_registro">
+        <?php
+            if ($flag==1) {
+              echo "<h4>ERROR!. No dejes campos sin rellenar.</h4>";
+            } elseif ($flag==2) {
+              echo "<h4>ERROR!. Las contraseñas no coinciden.</h4>";
+            }
+            elseif ($flag==3) {
+              echo "<h4>ERROR!. El usuario elegido ya se encuentra registrado.</h4>";
+            }
 
+?>
 
       </div>
       </form>
@@ -134,7 +81,7 @@ header("Location:inicio.php");
 
   <footer>
     <div class="footer_legenda">
-      <h5>2022 - Todos los derechos reservados</h5>
+      <h5>2022 - <a href="#">Patricio Gallo</a>. Todos los derechos reservados.</h5>
     </div>
 
   </footer>
