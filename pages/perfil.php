@@ -28,6 +28,8 @@
 
 
 
+
+
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -59,7 +61,7 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
     <div class="header_titulo">
       <h1> <a href="../../inicio.php"> Uploader </a></h1>
     </div>
-      <h2> <a href="../../php/cerrar.php">Cerrar</a></h2>
+      <h2> <a href="../../php/cerrar.php">Salir</a></h2>
   </header>
 
   <div class="cuerpo">
@@ -92,10 +94,29 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
             <p>Nacionalidad: <?php echo " ".$nacionalidad; ?></p>
           </li>
           <li>
-            <p>Tipo de cuenta: <?php echo " ".$tipoDeCuenta; ?></p>
+
+            <p>Tipo de cuenta: <?php
+            if ($tipoDeCuenta==0) {
+                echo "Normal</p>";
+            }elseif ($tipoDeCuenta==1) {
+                echo "Premium</p>";
+            }elseif ($tipoDeCuenta==2) {
+                echo "Admin</p>";
+            }
+
+              ?>
           </li>
           <li>
-            <p>Cantidad de gigas disponibles: <?php echo " ".$contador_gigas; ?></p>
+            <p>Cantidad de gigas disponibles: <?php echo " ".$contador_gigas;
+
+            if ($tipoDeCuenta==0) {
+                echo " "."de 3 Gb</p>";
+            }elseif ($tipoDeCuenta==1) {
+                echo " "."de 10 Gb</p>";
+            }elseif ($tipoDeCuenta==2) {
+                echo " "."de ilimitado</p>";
+            }
+            ?>
           </li>
           <li>
             <p>Cantidad publicaciones realizadas: <?php echo " ".$contador_publicaciones; ?></p>

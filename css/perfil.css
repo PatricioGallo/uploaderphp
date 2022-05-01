@@ -328,6 +328,12 @@ button {
   color: #F3F1E9;
 }
 
+.caja_informacion{
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+}
+
 .cuerpo_informacion p {
   color: #F3F1E9;
   margin-top: 10px;

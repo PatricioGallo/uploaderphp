@@ -12,7 +12,7 @@ $contador_archivosSubidos = $contador_archivosSubidos +1;
 $contador_gigas = $contador_gigas + $lista['tamano_archivo'];
 }
 
-$contador_gigas = round($contador_gigas / 1000);
+$contador_gigas = round($contador_gigas / 1000000000);
 
 }
 
