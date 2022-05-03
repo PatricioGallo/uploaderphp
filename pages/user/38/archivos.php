@@ -125,6 +125,8 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
   </div>
 
 
+<div class="cajas_archivosSubidos">
+
 
 
   <?php
@@ -140,16 +142,37 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
 
 
-    <div class="cuerpo_archivossubidos">
-      <div class="archivos_perfil">
-
+    <div class="cuerpo_subidaDeArchivos">
+      <div class="archivos_perfilSubidos">
+          <?php echo "<h4>".$nombre_perfil." ".$apellido_perfil."</h4>"; ?>
       </div>
-      <div class="archivos_contenido">
+      <div class="archivos_contenidoSubidos">
 
+          <?php
+          $formatos_imagenes =  array('jpg','jpge' ,'gif','bmp','png','tif','tiff');
+          $formatos_videos =  array('mp4','avi' ,'mkv','flv','mov','wmv','divx','xvid','rm');
+          $extension = pathinfo($nombre_archivo, PATHINFO_EXTENSION);  // le da a extension la "extension" de la ruta del archivo
+
+
+          if(in_array($extension, $formatos_imagenes) ) {     //verifica las extensiones y hace algo distinto en cada caso
+              ?> <img src="<?php echo "media/".$nombre_archivo; ?>" alt=""><?php
+
+          }elseif (in_array($extension, $formatos_videos)) {
+            ?> <video src="videofile.ogg" autoplay controls>
+              <source src="<?php echo "media/".$nombre_archivo; ?>" type="video/">
+            </video> <?php
+            
+          }else {
+            ?> <img src="../../../media/imagenes/archivos.jpg" alt=""> <?php
+          }
+          echo "<p>".$nombre_archivo."</p>";
+
+           ?>
       </div>
-      <div class="archivos_footer">
-        <a href="media/<?php echo $nombre_archivo; ?>" download  >Descargar</a>
-        <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  >VER</a>
+
+      <div class="archivos_footerSubidos">
+        <a href="media/<?php echo $nombre_archivo; ?>" download  > <button type="button" name="button">Descargar</button> </a>
+        <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  > <button type="button" name="button">Ver</button> </a>
       </div>
     </div>
 <?php } ?>
@@ -158,7 +181,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
 
 
-
+</div>
 
     </div>
 

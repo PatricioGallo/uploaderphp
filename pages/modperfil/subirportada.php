@@ -10,6 +10,9 @@ include("../php/verificar.php"); //verificacion de inicio de secion y caducidad
 
 $subido=1;
 
+if ($_POST) {
+
+
 if($_FILES){
 
 $ruta_fotoSubida = $_FILES['portada']['tmp_name'];
@@ -17,6 +20,7 @@ move_uploaded_file($ruta_fotoSubida,"../user/".$id."/perfil/portada2.jpg");
 $subido=0;
 }
 clearstatcache();
+header("Refresh: 1; URL= subirportada.php");}
  ?>
 
 
@@ -60,19 +64,21 @@ clearstatcache();
         </div>
         <div class="cuerpo_linea"></div>
         <div class="publicacion2_formulario">
-          <div class="publicacion_formularioTitulo">
-            <h1>Aqui puedes seleccionar tu nueva foto de portada</h1>
-          </div>
+
           <?php if($subido==1){ ?>
+            <div class="publicacion_formularioTitulo">
+              <h1>Aqui puedes seleccionar tu nueva foto de portada</h1>
+            </div>
             <div class="publicacion_cajaInput">
               <input type="file" name="portada" value="">
             </div>
+            <div class="cuerpo_linea"></div>
+            <button type="submit" name="button">Subir</button>
         <!--  <button type="button" name="button" id="subir">Seleccionar</button> -->
 <?php }else if($subido==0){
   echo "La foto de portada se guardo con exito";
 } ?>
-          <div class="cuerpo_linea"></div>
-          <button type="submit" name="button">Subir</button>
+        
 
 
       </form>

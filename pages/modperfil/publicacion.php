@@ -14,11 +14,7 @@ if(!empty ($_POST['contenido']) ){ //si no esta vacio el post
   $listaSQL= $conexion ->prepare("INSERT INTO `publicaciones` (`id_user`, `user`, `nombre`, `apellido`, `contenido`) VALUES ( '$id', '$usuario', '$nombre_user', '$apellido_user', '$contenido')");
   $listaSQL ->execute();
 
-include("modperfil/itemslogin.php"); //incluir items del login
-  $path = "user/$id";
-  if (!file_exists($path)) {
-      mkdir($path, 0777, true);
-  }
+
 
 header("Location:../inicio.php");
 

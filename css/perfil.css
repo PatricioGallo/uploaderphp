@@ -418,6 +418,90 @@ button {
   height: 50px;
 }
 
+
+/*subida de archivos*/
+
+.cajas_archivosSubidos{
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+
+.cuerpo_subidaDeArchivos{
+  width: 48%;
+  min-height: 250px;
+  margin-bottom: 15px;
+  background-color: #6D6A6A;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.archivos_perfilSubidos{
+  width: 94%;
+  margin-left: 3%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.archivos_perfilSubidos h4 {
+  margin-left: 10px;
+  font-size: 18px;
+  margin-top: 5px;
+  font-family: 'PT Sans', sans-serif;
+  color: #F3F1E9;
+  font-weight: normal;
+}
+
+
+.archivos_contenidoSubidos{
+  overflow-wrap: break-word;
+  width: 73%;
+  margin-left: 3%;
+  min-height: 150px;
+  border: 1px #F3F1E9 solid;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.archivos_contenidoSubidos p{
+font-size: 12px;
+margin-top: 10px;
+}
+.archivos_contenidoSubidos img{
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.archivos_contenidoSubidos video{
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+
+.archivos_footerSubidos{
+  width: 94%;
+  margin-left: 3%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+/*fin subida de archivos*/
+
+
 .cuerpo_editarportada {
   margin-top: 20px;
   margin-bottom: 20px;

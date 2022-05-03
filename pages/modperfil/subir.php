@@ -45,30 +45,33 @@ include("../php/guardar.php"); //guardar archivos subidos archivos a una carpeta
       </div>
 
       <div class="cuerpo_linea"></div>
-      <form class="" action="subir.php" method="post" enctype="multipart/form-data">
 
-        <div class="cuerpo_publicacionPerfil">
-          <a href="perfil.html"><img src="../user/<?php echo $id."/perfil/perfil.jpg"?>" alt=""></a>
-          <h1><?php echo $nombre_user." ".$apellido_user; ?></h1>
-        </div>
-        <div class="cuerpo_linea"></div>
-        <div class="publicacion2_formulario">
-            <div class="publicacion_formularioTitulo">
-              <h1>Aqui puedes seleccionar un archivo para subir a tu cuenta</h1>
-            </div>
-          <label for="fname">Descripcion</label>
-          <textarea name="descripcion_archivo" rows="8" cols="50" placeholder="Descripcion" id="descripcion_archivoText"></textarea>
+
 
           <?php if($subido==1){ ?>
+            <form class="" action="subir.php" method="post" enctype="multipart/form-data">
+
+              <div class="cuerpo_publicacionPerfil">
+                <a href="perfil.html"><img src="../user/<?php echo $id."/perfil/perfil.jpg"?>" alt=""></a>
+                <h1><?php echo $nombre_user." ".$apellido_user; ?></h1>
+              </div>
+              <div class="cuerpo_linea"></div>
+              <div class="publicacion2_formulario">
+                  <div class="publicacion_formularioTitulo">
+                    <h1>Aqui puedes seleccionar un archivo para subir a tu cuenta</h1>
+                  </div>
+            <label for="fname">Descripcion</label>
+            <textarea name="descripcion_archivo" rows="8" cols="50" placeholder="Descripcion" id="descripcion_archivoText"></textarea>
             <div class="publicacion_cajaInput">
               <input type="file" name="archivo" value="">
             </div>
+            <div class="cuerpo_linea"></div>
+            <button type="submit" name="button">Subir</button>
         <!--  <button type="button" name="button" id="subir">Seleccionar</button> -->
 <?php }else if($subido==0){
   echo "<p>El archivo: ".$nombre_archivoSubido." se guardo con exito</p>";
 } ?>
-          <div class="cuerpo_linea"></div>
-          <button type="submit" name="button">Subir</button>
+
 
 
       </form>

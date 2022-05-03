@@ -10,14 +10,16 @@ include("../php/verificar.php"); //verificacion de inicio de secion y caducidad
 
 $subido=1;
 
+if(!empty ($_POST)){
+
 if($_FILES){
 $ruta_fotoSubida = $_FILES['perfil']['tmp_name'];
 move_uploaded_file($ruta_fotoSubida,"../user/".$id."/perfil/perfil.jpg");
 $subido=0;
 }
 
-header("Refresh: 5; URL= subirperfil.php");   
-
+header("Refresh: 1; URL= subirperfil.php");
+}
  ?>
 
 
@@ -63,20 +65,22 @@ header("Refresh: 5; URL= subirperfil.php");
         </div>
         <div class="cuerpo_linea"></div>
         <div class="publicacion2_formulario">
-          <div class="publicacion_formularioTitulo">
-            <h1>Aqui puedes seleccionar tu nueva foto de perfil</h1>
-          </div>
+
 
           <?php if($subido==1){ ?>
+            <div class="publicacion_formularioTitulo">
+              <h1>Aqui puedes seleccionar tu nueva foto de perfil</h1>
+            </div>
             <div class="publicacion_cajaInput">
               <input type="file" name="perfil" value="">
             </div>
+            <div class="cuerpo_linea"></div>
+            <button type="submit" name="button">Subir</button>
         <!--  <button type="button" name="button" id="subir">Seleccionar</button> -->
 <?php }else if($subido==0){
   echo "La foto de perfil se guardo con exito";
 } ?>
-          <div class="cuerpo_linea"></div>
-          <button type="submit" name="button">Subir</button>
+
 
 
       </form>
