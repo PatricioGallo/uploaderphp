@@ -1,43 +1,13 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $id_perfil=38;?>
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
 //include("../../php/itemslogin.php"); //incluir items del login
 include("../../php/verperfil.php");//incluir items del usuario de la web perfil
-include("../../php/itemspubli.php");//incluir items de la publicacion
+
 include("../../php/contadordePubli.php");//incluir contador de publicacion
 
+include("../../php/itemsarchivos.php");//incluir items de la archivos
  ?>
 
 
@@ -143,41 +113,48 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
               <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
       <?php  }  ?>
 
+  <div class="cuerpo_linea"></div>
 
-
-    <?php
-
-    foreach ($listatabla as $lista) {
-
-      $nombre_pu= $lista['nombre'];
-      $apellido_pu= $lista['apellido'];
-      $mg= $lista['mg'];
-      $contenido= $lista['contenido'];
-      $id_user = $lista['id_user'];
-      ?>
-
-<?php if ($id_user == $id_perfil){ //corregir para hacer web unica?>
-
-
-
-      <div class="cuerpo_archivossubidos">
-        <div class="archivos_perfil">
-          <img src="<?php echo "perfil/perfil.jpg" ?>" alt="">
-          <h4> <?php echo $nombre_pu." ".$apellido_pu; ?> </h4>
-        </div>
-        <div class="archivos_contenido">
-            <?php echo $contenido; ?>
-        </div>
-        <div class="archivos_footer">
-
-        </div>
+  <div class="caja_perfil">
+      <div class="caja_botonPerfil" >
+        <a href="123.php"> <h2>Publicaciones</h2> </a>
       </div>
+      <div class="caja_botonPerfil" style="border: 1px white solid;" >
+        <a href="archivos.php"> <h2>Archivos</h2> </a>
+      </div>
+  </div>
+
+
+
+
+  <?php
+
+  foreach ($listatabla as $lista) {
+
+    $id_userArchivo= $lista['id_userArchivo'];
+    $nombre_archivo= $lista['nombre_archivo'];
+    $descripcion_archivo= $lista['descripcion_archivo'];
+    ?>
+
+<?php if ($id_userArchivo == $id_perfil){ //corregir para hacer web unica?>
+
+
+
+    <div class="cuerpo_archivossubidos">
+      <div class="archivos_perfil">
+
+      </div>
+      <div class="archivos_contenido">
+
+      </div>
+      <div class="archivos_footer">
+        <a href="media/<?php echo $nombre_archivo; ?>" download  >Descargar</a>
+        <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  >VER</a>
+      </div>
+    </div>
 <?php } ?>
 
-    <?php }?>
-
-
-
+  <?php }?>
 
 
 

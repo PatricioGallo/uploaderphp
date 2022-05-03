@@ -16,7 +16,7 @@ $ruta_fotoSubida = $_FILES['portada']['tmp_name'];
 move_uploaded_file($ruta_fotoSubida,"../user/".$id."/perfil/portada2.jpg");
 $subido=0;
 }
-
+clearstatcache();
  ?>
 
 

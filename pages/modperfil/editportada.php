@@ -6,7 +6,7 @@ include("../php/itemslogin.php"); //incluir items del login
 if($_SESSION["autorizado"] == TRUE){
 
 include("../php/verificar.php"); //verificacion de inicio de secion y caducidad
-
+header("Refresh: 5; URL= subirperfil.php");
 
  ?>
 
@@ -59,14 +59,6 @@ include("../php/verificar.php"); //verificacion de inicio de secion y caducidad
       <a href="subirperfil.php"> <button type="button" name="button">Foto perfil</button></a>
       <a href="subirportada.php">  <button type="button" name="button">Foto portada</button></a>
       </div>
-
-
-
-
-
-
-
-
 
 
     </div>

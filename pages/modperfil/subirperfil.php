@@ -16,6 +16,8 @@ move_uploaded_file($ruta_fotoSubida,"../user/".$id."/perfil/perfil.jpg");
 $subido=0;
 }
 
+header("Refresh: 5; URL= subirperfil.php");   
+
  ?>
 
 
@@ -64,7 +66,7 @@ $subido=0;
           <div class="publicacion_formularioTitulo">
             <h1>Aqui puedes seleccionar tu nueva foto de perfil</h1>
           </div>
-          
+
           <?php if($subido==1){ ?>
             <div class="publicacion_cajaInput">
               <input type="file" name="perfil" value="">
