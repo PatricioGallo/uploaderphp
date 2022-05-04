@@ -7,7 +7,6 @@ include("../../php/verperfil.php");//incluir items del usuario de la web perfil
 include("../../php/itemspubli.php");//incluir items de la publicacion
 include("../../php/contadordePubli.php");//incluir contador de publicacion
 
-header("Refresh: 5; URL= 123.php");
  ?>
 
 
@@ -60,9 +59,7 @@ header("Refresh: 5; URL= 123.php");
       <div class="cuerpo_informacion">
 
         <ul>
-          <li>
-            <p>Nacionalidad: <?php echo " ".$nacionalidad; ?></p>
-          </li>
+
           <li>
 
             <p>Tipo de cuenta: <?php
@@ -110,17 +107,17 @@ header("Refresh: 5; URL= 123.php");
 
 
       <?php if ($id_perfil == $_SESSION["id"]) { ?>
-              <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
+              <a href="../../modperfil/subir.php" >  <button type="button" name="button" >Subir archivo</button></a>
       <?php  }  ?>
 
-  <div class="cuerpo_linea"></div>
 
-  <div class="caja_perfil">
+
+  <div class="caja_perfil" id="caja_perfil">
       <div class="caja_botonPerfil" style="border: 1px white solid;" >
-        <a href="123.php"> <h2>Publicaciones</h2> </a>
+        <a href="123.php#caja_perfil"> <h2>Publicaciones</h2> </a>
       </div>
-      <div class="caja_botonPerfil">
-        <a href="archivos.php"> <h2>Archivos</h2> </a>
+      <div class="caja_botonPerfil" style=" border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" >
+        <a href="archivos.php#caja_perfil"> <h2>Archivos</h2> </a>
       </div>
   </div>
 

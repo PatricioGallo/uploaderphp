@@ -18,7 +18,7 @@ move_uploaded_file($ruta_fotoSubida,"../user/".$id."/perfil/perfil.jpg");
 $subido=0;
 }
 
-header("Refresh: 1; URL= subirperfil.php");
+//header("Refresh: 1; URL= subirperfil.php");
 }
  ?>
 
@@ -78,7 +78,7 @@ header("Refresh: 1; URL= subirperfil.php");
             <button type="submit" name="button">Subir</button>
         <!--  <button type="button" name="button" id="subir">Seleccionar</button> -->
 <?php }else if($subido==0){
-  echo "La foto de perfil se guardo con exito";
+    echo "<p>La foto de perfil se guardo con exito</p>";
 } ?>
 
 

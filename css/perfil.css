@@ -146,6 +146,13 @@ color:white;
   margin-bottom: 20px;
 }
 
+.cuerpo_publicacion2 p{
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .publicacion2_formulario{
   display: flex;
   flex-direction: column;
@@ -238,20 +245,24 @@ color:white;
 
 
 .caja_botonPerfil{
-    width: 49%;
+    width: 50%;
     height: 50px;
-    margin-left: 1%;
     background-color: #6D6A6A;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 
+.caja_botonPerfil a{
+    margin-top: 14px;
+}
+
 .caja_perfil h2{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   text-align: center;
-  margin-top: 13px;
 }
 
 
@@ -450,7 +461,7 @@ button {
 
 .archivos_perfilSubidos h4 {
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 5px;
   font-family: 'PT Sans', sans-serif;
   color: #F3F1E9;
@@ -462,7 +473,7 @@ button {
   overflow-wrap: break-word;
   width: 73%;
   margin-left: 3%;
-  min-height: 150px;
+  min-height: 160px;
   border: 1px #F3F1E9 solid;
   border-radius: 10px;
   padding: 20px;
@@ -498,6 +509,11 @@ margin-top: 10px;
   justify-content: space-around;
   margin-top: 5px;
 }
+
+.archivos_footerSubidos button{
+font-size: 12px;
+}
+
 
 /*fin subida de archivos*/
 

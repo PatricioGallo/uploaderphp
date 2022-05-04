@@ -20,7 +20,8 @@ move_uploaded_file($ruta_fotoSubida,"../user/".$id."/perfil/portada2.jpg");
 $subido=0;
 }
 clearstatcache();
-header("Refresh: 1; URL= subirportada.php");}
+//header("Refresh: 5; URL= subirportada.php");
+}
  ?>
 
 
@@ -76,9 +77,9 @@ header("Refresh: 1; URL= subirportada.php");}
             <button type="submit" name="button">Subir</button>
         <!--  <button type="button" name="button" id="subir">Seleccionar</button> -->
 <?php }else if($subido==0){
-  echo "La foto de portada se guardo con exito";
+  echo "<p>La foto de portada se guardo con exito</p>";
 } ?>
-        
+
 
 
       </form>

@@ -4,9 +4,7 @@ session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
 //include("../../php/itemslogin.php"); //incluir items del login
 include("../../php/verperfil.php");//incluir items del usuario de la web perfil
-
 include("../../php/contadordePubli.php");//incluir contador de publicacion
-
 include("../../php/itemsarchivos.php");//incluir items de la archivos
  ?>
 
@@ -60,9 +58,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
       <div class="cuerpo_informacion">
 
         <ul>
-          <li>
-            <p>Nacionalidad: <?php echo " ".$nacionalidad; ?></p>
-          </li>
+
           <li>
 
             <p>Tipo de cuenta: <?php
@@ -113,14 +109,14 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
               <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
       <?php  }  ?>
 
-  <div class="cuerpo_linea"></div>
 
-  <div class="caja_perfil">
+
+  <div class="caja_perfil" id="caja_perfil">
       <div class="caja_botonPerfil" >
-        <a href="123.php"> <h2>Publicaciones</h2> </a>
+        <a href="123.php#caja_perfil"> <h2>Publicaciones</h2> </a>
       </div>
-      <div class="caja_botonPerfil" style="border: 1px white solid;" >
-        <a href="archivos.php"> <h2>Archivos</h2> </a>
+      <div class="caja_botonPerfil" style="border: 1px white solid; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" >
+        <a href="archivos.php#caja_perfil"> <h2>Archivos</h2> </a>
       </div>
   </div>
 
@@ -155,15 +151,15 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
 
           if(in_array($extension, $formatos_imagenes) ) {     //verifica las extensiones y hace algo distinto en cada caso
-              ?> <img src="<?php echo "media/".$nombre_archivo; ?>" alt=""><?php
+              ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="<?php echo "media/".$nombre_archivo; ?>" alt=""></a><?php
 
           }elseif (in_array($extension, $formatos_videos)) {
-            ?> <video src="videofile.ogg" autoplay controls>
+            ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><video src="videofile.ogg" autoplay controls>
               <source src="<?php echo "media/".$nombre_archivo; ?>" type="video/">
-            </video> <?php
-            
+            </video> </a><?php
+
           }else {
-            ?> <img src="../../../media/imagenes/archivos.jpg" alt=""> <?php
+            ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/archivos.jpg" alt=""></a> <?php
           }
           echo "<p>".$nombre_archivo."</p>";
 
@@ -172,7 +168,6 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
       <div class="archivos_footerSubidos">
         <a href="media/<?php echo $nombre_archivo; ?>" download  > <button type="button" name="button">Descargar</button> </a>
-        <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  > <button type="button" name="button">Ver</button> </a>
       </div>
     </div>
 <?php } ?>
