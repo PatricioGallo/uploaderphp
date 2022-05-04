@@ -114,10 +114,10 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
 
   <div class="caja_perfil" id="caja_perfil">
       <div class="caja_botonPerfil" style="border: 1px white solid;" >
-        <a href="123.php#caja_perfil"> <h2>Publicaciones</h2> </a>
+        <a href="<?php echo $usuario_perfil.".php#caja_perfil" ?>"> <h2>Publicaciones</h2> </a>
       </div>
       <div class="caja_botonPerfil" style=" border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" >
-        <a href="archivos.php#caja_perfil"> <h2>Archivos</h2> </a>
+        <a href=" <?php echo $usuario_perfil."Archivos.php#caja_perfil" ?>"> <h2>Archivos</h2> </a>
       </div>
   </div>
 

@@ -33,7 +33,7 @@ include("../php/guardar.php"); //guardar archivos subidos archivos a una carpeta
     <div class="header_titulo">
       <h1> <a href="../inicio.php"> Uploader </a></h1>
     </div>
-    <h2> <a href="../user/<?php echo $id."/".$usuario.".php" ?>"> Volver </a></h2>
+    <h2> <a href="../user/<?php echo $id."/".$usuario."Archivos.php" ?>"> Volver </a></h2>
   </header>
 
   <div class="cuerpo">

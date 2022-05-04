@@ -90,9 +90,7 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
       <div class="cuerpo_informacion">
 
         <ul>
-          <li>
-            <p>Nacionalidad: <?php echo " ".$nacionalidad; ?></p>
-          </li>
+
           <li>
 
             <p>Tipo de cuenta: <?php
@@ -140,10 +138,19 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
 
 
       <?php if ($id_perfil == $_SESSION["id"]) { ?>
-              <a href="../../modperfil/subir.php">  <button type="button" name="button">Subir archivo</button></a>
+              <a href="../../modperfil/subir.php" >  <button type="button" name="button" >Subir archivo</button></a>
       <?php  }  ?>
 
 
+
+  <div class="caja_perfil" id="caja_perfil">
+      <div class="caja_botonPerfil" style="border: 1px white solid;" >
+        <a href="<?php echo $usuario_perfil.".php#caja_perfil" ?>"> <h2>Publicaciones</h2> </a>
+      </div>
+      <div class="caja_botonPerfil" style=" border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" >
+        <a href=" <?php echo $usuario_perfil."Archivos.php#caja_perfil" ?>"> <h2>Archivos</h2> </a>
+      </div>
+  </div>
 
     <?php
 

@@ -53,21 +53,30 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd']) && !empty ($_POST['nombre'
             $fuente = "../media/perfil/perfil.jpg";
             $fuente2 ="../media/perfil/portada2.jpg";
             $fuente3 = "perfil.php";
+            $fuente4 = "Archivos.php";
 
             $destino = "user/".$id."/perfil/perfil.jpg";
             $destino2 = "user/".$id."/perfil/portada2.jpg";
             $destino3 ="user/".$id."/".$user.".php";
+            $destino4 ="user/".$id."/".$user."Archivos.php";
+
+
 
             copy($fuente, $destino);
             copy($fuente2, $destino2);
             copy($fuente3, $destino3);
-
+            copy($fuente4, $destino4);
 
             $fuentew="user/".$id."/".$user.".php";
             $contenidow="<?php $"."id_perfil=".$id.";?>";
             $fp = fopen($fuentew, 'r+');
             fwrite($fp, $contenidow);
             fclose($fp);
+
+            $fuentew2="user/".$id."/".$user."Archivos.php";
+            $fp2 = fopen($fuentew2, 'r+');
+            fwrite($fp2, $contenidow);
+            fclose($fp2);            
 
             // ¡el contenido de 'data.txt' ahora es 123 y no 23!
 
