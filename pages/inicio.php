@@ -24,7 +24,7 @@ include("php/verificar.php"); //verificacion de inicio de secion y caducidad
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-  <title>UPLOADER / Perfil</title>
+  <title>UPLOADER / Inicio</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@ foreach ($listatabla as $lista) {
     </div>
     <div class="archivos_contenido">
 
-        <?php echo $contenido; ?>  
+        <?php echo $contenido; ?>
     </div>
     <div class="archivos_footer">
 
