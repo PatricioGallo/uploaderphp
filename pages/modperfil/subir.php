@@ -24,7 +24,7 @@ include("../php/guardar.php"); //guardar archivos subidos archivos a una carpeta
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-  <title>UPLOADER / Publicacion</title>
+  <title>UPLOADER / Subir archivos</title>
 </head>
 
 <body>
@@ -54,14 +54,17 @@ include("../php/guardar.php"); //guardar archivos subidos archivos a una carpeta
               <div class="cuerpo_publicacionPerfil">
                 <a href="perfil.html"><img src="../user/<?php echo $id."/perfil/perfil.jpg"?>" alt=""></a>
                 <h1><?php echo $nombre_user." ".$apellido_user; ?></h1>
+                <select name="estado">
+                  <option value="Publico">Publico</option>
+                  <option value="Privado">Privado</option>
+                </select>
               </div>
+
               <div class="cuerpo_linea"></div>
               <div class="publicacion2_formulario">
                   <div class="publicacion_formularioTitulo">
                     <h1>Aqui puedes seleccionar un archivo para subir a tu cuenta</h1>
                   </div>
-            <label for="fname">Descripcion</label>
-            <textarea name="descripcion_archivo" rows="8" cols="50" placeholder="Descripcion" id="descripcion_archivoText"></textarea>
             <div class="publicacion_cajaInput">
               <input type="file" name="archivo" value="">
             </div>

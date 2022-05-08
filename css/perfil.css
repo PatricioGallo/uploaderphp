@@ -297,6 +297,16 @@ height: 60px;
   font-weight: normal;
 }
 
+.cuerpo_publicacionPerfil select{
+  font-size: 15px;
+  color: white;
+  background-color: #6D6A6A;
+  margin-bottom: 10px;
+  margin-left: 3%;
+  margin-right:  3%;
+  border: none;
+}
+
 
 .publicacion_formularioTitulo {
   width: 90%;
@@ -459,6 +469,8 @@ button {
   flex-direction: row;
 }
 
+
+
 .archivos_perfilSubidos h4 {
   margin-left: 10px;
   font-size: 16px;
@@ -468,6 +480,13 @@ button {
   font-weight: normal;
 }
 
+.archivos_perfilSubidos p{
+color: white;
+margin-left: 10px;
+margin-top: 12px;
+font-size: 12px;
+
+}
 
 .archivos_contenidoSubidos{
   overflow-wrap: break-word;

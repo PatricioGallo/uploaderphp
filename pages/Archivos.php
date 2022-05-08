@@ -12,17 +12,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -155,10 +144,16 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
     $id_userArchivo= $lista['id_userArchivo'];
     $nombre_archivo= $lista['nombre_archivo'];
-    $descripcion_archivo= $lista['descripcion_archivo'];
+    $estado_archivo= $lista['estado'];
     ?>
 
-<?php if ($id_userArchivo == $id_perfil){ //corregir para hacer web unica?>
+
+<?php
+if ($_SESSION["id"] != $id_perfil) {
+
+
+ if ($id_userArchivo == $id_perfil && $estado_archivo=="Publico"){
+  ?>
 
 
 
@@ -170,7 +165,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
           <?php
           $formatos_imagenes =  array('jpg','jpge' ,'gif','bmp','png','tif','tiff');
-          $formatos_videos =  array('mp4','avi' ,'mkv','flv','mov','wmv','divx','xvid','rm');
+          $formatos_videos =  array('mp4','avi' ,'mkv','flv','mov','wmv','divx','xvid','rm','MOV');
           $formatos_pp =  array('ppt','pptx','pptm');
           $formatos_word =  array('doc','docm' ,'docx');
           $formatos_pdf =  array('pdf');
@@ -210,9 +205,64 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
         <a href="media/<?php echo $nombre_archivo; ?>" download  > <button type="button" name="button">Descargar</button> </a>
       </div>
     </div>
-<?php } ?>
 
-  <?php }?>
+
+<?php } }elseif ($_SESSION["id"] == $id_perfil) {
+            if ($id_userArchivo == $id_perfil){?>
+
+
+<div class="cuerpo_subidaDeArchivos">
+  <div class="archivos_perfilSubidos">
+      <?php echo "<h4>".$nombre_perfil." ".$apellido_perfil."</h4>"; ?>
+      <p> <?php echo $estado_archivo; ?> </p>
+  </div>
+  <div class="archivos_contenidoSubidos">
+
+      <?php
+      $formatos_imagenes =  array('jpg','jpge' ,'gif','bmp','png','tif','tiff');
+      $formatos_videos =  array('mp4','avi' ,'mkv','flv','mov','wmv','divx','xvid','rm','MOV');
+      $formatos_pp =  array('ppt','pptx','pptm');
+      $formatos_word =  array('doc','docm' ,'docx');
+      $formatos_pdf =  array('pdf');
+      $formatos_excel =  array('xlsx','xlsm' ,'slxb','xltx');
+      $extension = pathinfo($nombre_archivo, PATHINFO_EXTENSION);  // le da a extension la "extension" de la ruta del archivo
+
+
+      if(in_array($extension, $formatos_imagenes) ) {     //verifica las extensiones y hace algo distinto en cada caso
+          ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="<?php echo "media/".$nombre_archivo; ?>" alt=""></a><?php
+
+      }elseif (in_array($extension, $formatos_videos)) {
+        ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><video src="videofile.ogg" autoplay controls>
+          <source src="<?php echo "media/".$nombre_archivo; ?>" type="video/">
+        </video> </a><?php
+
+      }elseif (in_array($extension, $formatos_pp)) {
+          ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/pp.jpg" alt=""></a><?php
+
+      }elseif (in_array($extension, $formatos_word)) {
+        ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/word.jpg" alt=""></a><?php
+
+      }elseif (in_array($extension, $formatos_pdf)) {
+          ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/pdf.jpg" alt=""></a><?php
+
+      }elseif (in_array($extension, $formatos_excel)) {
+          ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/excel.jpg" alt=""></a><?php
+
+      }else {
+        ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/archivos.jpg" alt=""></a> <?php
+      }
+      echo "<p>".$nombre_archivo."</p>";
+
+       ?>
+  </div>
+
+  <div class="archivos_footerSubidos">
+    <a href="media/<?php echo $nombre_archivo; ?>" download  > <button type="button" name="button">Descargar</button> </a>
+  </div>
+</div>
+
+<?php }} ?>
+<?php }?>  <!--cierra el foreach-->
 
 
 
