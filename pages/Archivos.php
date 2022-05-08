@@ -164,12 +164,7 @@ if ($_SESSION["id"] != $id_perfil) {
       <div class="archivos_contenidoSubidos">
 
           <?php
-          $formatos_imagenes =  array('jpg','jpge' ,'gif','bmp','png','tif','tiff');
-          $formatos_videos =  array('mp4','avi' ,'mkv','flv','mov','wmv','divx','xvid','rm','MOV');
-          $formatos_pp =  array('ppt','pptx','pptm');
-          $formatos_word =  array('doc','docm' ,'docx');
-          $formatos_pdf =  array('pdf');
-          $formatos_excel =  array('xlsx','xlsm' ,'slxb','xltx');
+          include("php/formatos.php");//incluir formatos
           $extension = pathinfo($nombre_archivo, PATHINFO_EXTENSION);  // le da a extension la "extension" de la ruta del archivo
 
 
