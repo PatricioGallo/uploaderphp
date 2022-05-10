@@ -1,32 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $id_perfil=44;?>
 
 
 <?php
@@ -189,8 +161,8 @@ if ($_SESSION["id"] != $id_perfil) {
               ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="<?php echo "media/".$nombre_archivo; ?>" alt=""></a><?php
 
           }elseif (in_array($extension, $formatos_videos)) {
-            ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><video  autoplay muted>
-              <source src="<?php echo "media/".$nombre_archivo; ?>" type="video">
+            ?> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><video src="videofile.ogg" autoplay controls>
+              <source src="<?php echo "media/".$nombre_archivo; ?>" type="video/">
             </video> </a><?php
 
           }elseif (in_array($extension, $formatos_pp)) {
