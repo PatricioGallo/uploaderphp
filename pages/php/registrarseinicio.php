@@ -40,9 +40,9 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd']) && !empty ($_POST['nombre'
                     $id= $lista['id'];
                     }
 
-                    $path = "user/".$id;
-                    $path2 = "user/".$id."/perfil";
-                    $path3 = "user/".$id."/media";
+                    $path = "pages/user/".$id;
+                    $path2 = "pages/user/".$id."/perfil";
+                    $path3 = "pages/user/".$id."/media";
                     if (!file_exists($path)) {
                         mkdir($path, 0777, true);
                         mkdir($path2, 0777, true);
@@ -50,15 +50,15 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd']) && !empty ($_POST['nombre'
                       }
                     }
 
-            $fuente = "../media/perfil/perfil.jpg";
-            $fuente2 ="../media/perfil/portada2.jpg";
-            $fuente3 = "perfil.php";
-            $fuente4 = "Archivos.php";
+            $fuente = "media/perfil/perfil.jpg";
+            $fuente2 ="media/perfil/portada2.jpg";
+            $fuente3 = "pages/perfil.php";
+            $fuente4 = "pages/Archivos.php";
 
-            $destino = "user/".$id."/perfil/perfil.jpg";
-            $destino2 = "user/".$id."/perfil/portada2.jpg";
-            $destino3 ="user/".$id."/".$user.".php";
-            $destino4 ="user/".$id."/".$user."Archivos.php";
+            $destino = "pages/user/".$id."/perfil/perfil.jpg";
+            $destino2 = "pages/user/".$id."/perfil/portada2.jpg";
+            $destino3 ="pages/user/".$id."/".$user.".php";
+            $destino4 ="pages/user/".$id."/".$user."Archivos.php";
 
 
 
@@ -67,13 +67,13 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd']) && !empty ($_POST['nombre'
             copy($fuente3, $destino3);
             copy($fuente4, $destino4);
 
-            $fuentew="user/".$id."/".$user.".php";
+            $fuentew="pages/user/".$id."/".$user.".php";
             $contenidow="<?php $"."id_perfil=".$id.";?>";
             $fp = fopen($fuentew, 'r+');
             fwrite($fp, $contenidow);
             fclose($fp);
 
-            $fuentew2="user/".$id."/".$user."Archivos.php";
+            $fuentew2="pages/user/".$id."/".$user."Archivos.php";
             $fp2 = fopen($fuentew2, 'r+');
             fwrite($fp2, $contenidow);
             fclose($fp2);
@@ -83,7 +83,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd']) && !empty ($_POST['nombre'
 
 
 
-            header("Location:inicio.php");
+            header("Location:pages/inicio.php");
 
       }else{
         $flags =2;

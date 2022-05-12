@@ -9,6 +9,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+/*------------------------Para celulares-------------------------*/
+
+@media (max-width: 767px) {
 /*---------------HEADER-------------*/
 header {
   width: 100%;
@@ -24,18 +27,17 @@ header {
   margin-top: 20px;
 }
 
-
 .header_titulo h1 {
   color: white;
   font-family: "Sofia";
 }
 
-.header_titulo a{
+.header_titulo a {
   text-decoration: none;
   color: white;
 }
-/*---------------fin HEADER-------------*/
 
+/*---------------fin HEADER-------------*/
 /*---------------cuerpo-------------*/
 .cuerpo {
   width: 98%;
@@ -45,22 +47,13 @@ header {
   margin-top: 10px;
 }
 
-.cuerpo_formulario{
+.cuerpo_formulario {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 }
 
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 15px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=password], select {
+.cuerpo_formulario input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 15px 0;
@@ -70,8 +63,15 @@ input[type=password], select {
   box-sizing: border-box;
 }
 
-
-
+.cuerpo_formulario input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 15px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
 input[type=submit] {
   width: 100%;
@@ -85,7 +85,7 @@ input[type=submit] {
   font-size: 17px;
 }
 
-button{
+.cuerpo_formulario button {
   width: 100%;
   height: 70px;
   background-color: #4CAF50;
@@ -102,15 +102,14 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-
-.formulario_registro{
-text-align: center;
+.formulario_registro {
+  text-align: center;
 }
 
-.formulario_registro h4{
-text-align: center;
-color: red;
-margin-bottom: 10px;
+.formulario_registro h4 {
+  text-align: center;
+  color: red;
+  margin-bottom: 10px;
 }
 
 /*---------------fin cuerpo-------------*/
@@ -121,21 +120,221 @@ footer {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-
 }
 
-.footer_legenda{
+.footer_legenda {
   text-align: center;
   margin-top: 40px;
 }
 
-.footer_legenda h5{
+.footer_legenda h5 {
   color: white;
   font-size: 12px;
 }
 
-.footer_legenda h5 a{
+.footer_legenda h5 a {
   color: white;
   font-weight: bold;
   text-decoration: none;
+}
+
+.formulario_header{
+  display: none;
+}
+
+.cuerpo_imagen{
+  display: none;
+}
+.cuerpo_registro{
+  display: none;
+}
+
+}
+
+/*------------------fin celulares---------------------*/
+/*-------------------------------------- PARA PC---------------------------------------*/
+@media (min-width: 768px) {
+
+body{
+  background-color: white;
+}
+  /*---------------HEADER-------------*/
+  header {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .header_titulo {
+    text-align: center;
+    margin-left: 40px;
+    margin-top: 7px;
+    width: 20%;
+  }
+
+  .header_titulo h1 {
+    color: white;
+    font-family: "Sofia";
+  }
+
+  .header_titulo a {
+    text-decoration: none;
+    color: white;
+  }
+  .espacio{
+    width: 40%;
+  }
+  .formulario_header {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+  }
+
+  .formulario_header input[type=text], select {
+    width: 33%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .formulario_header input[type=password], select {
+    width: 33%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .formulario_header button {
+    width: 20%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .formulario_registro h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /*---------------fin HEADER-------------*/
+  /*----------inicio cuerpo--------------*/
+
+  .cuerpo {
+    width: 100%;
+    margin-left: 0%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 0px;
+    background-color: rgb(240, 242, 245);
+  }
+  .cuerpo_formulario {
+    display: none;
+  }
+
+.cuerpo_imagen{
+  width: 60%;
+
+}
+
+.cuerpo_imagen img{
+  margin-top: 30px;
+  margin-left: 50px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  width: 80%;
+  height: 80%;
+
+}
+
+.cuerpo_registro{
+  width: 30%;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.bordes_registro {
+  border-radius: 15px;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: white;
+  padding: 25px;
+}
+
+.bordes_registro input[type=text], select {
+  width: 100%;
+  padding: 3% 3%;
+  margin: 1% 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.bordes_registro input[type=password], select {
+  width: 100%;
+  padding: 3% 3%;
+  margin: 1% 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+.bordes_registro button {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 3% 3%;
+  margin: 2% 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+  /*----------fin cuerpo--------------*/
+
+  footer {
+    width: 100%;
+    height: 50px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer_legenda {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .footer_legenda h5 {
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .footer_legenda h5 a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+
 }

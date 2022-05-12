@@ -9,8 +9,8 @@ header("Location:inicio.php");
 
 else{ //si no se inicia sesion todo el programa
 include("../config/db.php"); //incluyo la base de datos
-$flag=0;
-include("php/registrarse.php"); //incluyo la base de datos
+$flags=0;
+include("php/registrarse.php"); //incluyo el registro
 
 
  ?>
@@ -62,12 +62,12 @@ include("php/registrarse.php"); //incluyo la base de datos
 
       <div class="formulario_registro">
         <?php
-            if ($flag==1) {
+            if ($flags==1) {
               echo "<h4>ERROR!. No dejes campos sin rellenar.</h4>";
-            } elseif ($flag==2) {
+            } elseif ($flags==2) {
               echo "<h4>ERROR! Las contraseñas no coinciden.</h4>";
             }
-            elseif ($flag==3) {
+            elseif ($flags==3) {
               echo "<h4>ERROR! El usuario elegido ya se encuentra registrado.</h4>";
             }
 
