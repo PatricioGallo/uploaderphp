@@ -9,6 +9,11 @@ body {
   flex-direction: column;
 }
 
+
+/*---------------------------------PARA CELULARES-------------------------------*/
+
+
+@media (max-width: 767px) {
 /*---------------HEADER-------------*/
 header {
   width: 100%;
@@ -85,6 +90,8 @@ a {
   z-index: -1;
 }
 
+
+/*INICIO*/
 .cuerpo_publicacion{
   width: 100%;
   height: 50px;
@@ -128,6 +135,9 @@ color:white;
   height: 40px;
   border-radius: 50%;
 }
+
+/*FIN INICIO*/
+
 
 .cuerpo_publicacion2{
   width: 100%;
@@ -588,3 +598,143 @@ width: 50%;
 
 
 /*--------------- fin cuerpo-------------*/
+
+
+/*------Eliminacion-------- */
+/*Eliminacion inicio*/
+.cuerpo_publicidad{
+  display: none;
+}
+.cuerpo_menu{
+  display: none;
+}
+
+/*------fin eliminacion---*/
+/*---------------------------------FIN CELULARES-------------------------------*/
+}
+
+/*---------------------------------PARA PC -----------------------------------*/
+
+@media (min-width: 768px) {
+
+  header {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header_titulo {
+    width: 50%;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+  .header_titulo h1 {
+    color: white;
+    font-family: "Sofia";
+  }
+
+  .header_titulo h1 a {
+    text-decoration: none;
+    color: WHITE;
+  }
+
+  header h2 {
+    margin-left: 25%;
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: right;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header_perfil{
+    margin-top: 5px;
+    margin-left: 25%;
+  }
+
+  .header_perfil img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  /*---------------fin HEADER-------------*/
+  /*--------------- cuerpo-------------*/
+  body{
+    background-color: rgb(240, 242, 245);
+  }
+  .cuerpo {
+    width: 100%;
+    display: flex;
+    flex-direction: ROW;
+    margin-top: 10px;
+  }
+
+  /*--INICIO--*/
+
+  .cuerpo_menu{
+    width: 25%;
+  }
+
+  .cuerpo_publicacion{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: grey 1px solid;
+        box-shadow: 3px 3px 18px #888888;
+  }
+
+  .cuerpo_publicidad{
+    width: 25%;
+  }
+
+  .publicacion_texto{
+    width: 73%;
+    margin-top: 8px;
+    margin-left: 5px;
+  }
+
+
+  .publicacion_texto input[type=text]{
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px white solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(240, 242, 245);
+  }
+  .publicacion_texto input::placeholder{
+  color:black;
+  }
+
+  .publicacion_foto{
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+
+  .publicacion_foto img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+
+
+
+/*---------------------------------FIN PC -----------------------------------*/
+}

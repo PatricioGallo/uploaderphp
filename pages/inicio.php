@@ -40,6 +40,10 @@ include("php/verificar.php"); //verificacion de inicio de secion y caducidad
 
   <div class="cuerpo">
 
+    <div class="cuerpo_menu">
+
+    </div>
+
     <div class="cuerpo_publicacion">
       <div class="publicacion_foto">
         <a href="<?php echo "user/".$id."/".$usuario.".php"; ?>  "><img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
@@ -51,6 +55,9 @@ include("php/verificar.php"); //verificacion de inicio de secion y caducidad
 
     </div>
 
+    <div class="cuerpo_publicidad">
+
+    </div>
 
 
 <?php
