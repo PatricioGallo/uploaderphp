@@ -586,6 +586,19 @@ body {
 .header_nombre{
   display: none;
 }
+.portada_nombre{
+  display: none;
+}
+.cuerpo_debajoPortadaPC{
+  display: none;
+}
+
+.botones_portada{
+  display: none;
+}
+.cuerpo_lineaPC{
+  display: none;
+}
   /*------fin eliminacion---*/
   /*---------------------------------FIN CELULARES-------------------------------*/
 }
@@ -643,9 +656,10 @@ body {
   }
 
 .header_nombre{
-  font-size: 20px;
-  margin-top: 10px;
-  margin-left: 20px;
+  font-size: 16px;
+  margin-top: 14px;
+  margin-left: 10px;
+  font-weight: normal;
 }
   /*---------------fin HEADER-------------*/
   /*--------------- cuerpo-------------*/
@@ -657,11 +671,11 @@ body {
     width: 100%;
     display: flex;
     flex-direction: ROW;
-    margin-top: 10px;
   }
 
   /*--INICIO--*/
   .cuerpo_menu {
+    margin-top: 10px;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -669,6 +683,7 @@ body {
 
 
   .cuerpo_paraPC{
+    margin-top: 10px;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -676,6 +691,7 @@ body {
 
 
   .cuerpo_publicacion {
+    margin-top: 10px;
     width: 100%;
     height: 50px;
     background-color: white;
@@ -694,6 +710,7 @@ body {
   }
 
   .cuerpo_publicidad {
+    margin-top: 10px;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -872,6 +889,107 @@ body {
   margin-left: 20px;
   margin-top: 6px;
 }
+
+
+/*PERFIL*/
+
+.cuerpo_debajoPortada{
+  display: none;
+}
+
+.cuerpo_portada {
+  width: 100%;
+  padding-top: 10px;
+  position: absolute;
+  z-index: 0;
+  background-color: white;
+  height: 480px;
+
+  box-shadow: 1px 1px 3px #888888;
+}
+
+.cuerpo_portada img {
+  width: 80%;
+  height: 300px;
+  margin-left: 10%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: absolute;
+  z-index: -1;
+}
+
+.portada_perfil {
+  width: 150px;
+  height: 145px;
+  position: absolute;
+  top: 250px;
+  left: 10%;
+}
+
+.portada_perfil img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px white solid;
+}
+
+.portada_nombre h2{
+  font-size: 35px;
+  color: black;
+  margin-left: 330px;
+  margin-top: 310px;
+}
+
+
+  .cuerpo_lineaPC {
+    width: 80%;
+    margin-left: 10%;
+    height: 1px;
+    margin-top: 70px;
+    background-color: #e9e9e9;
+  }
+
+
+.botones_portada{
+  margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.botones_portada a:hover{
+  background-color: #e9e9e9;
+}
+
+
+.boton_deLaPortada{
+  padding:20px;
+}
+
+.boton_deLaPortada h3{
+  font-size: 17px;
+  color: black;
+}
+
+.cuerpo_debajoPortadaPC{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 490px;
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+}
+.cuerpo_debajoMenuIzquierdo{
+  width: 40%;
+  height: 500px;
+  background-color: green;
+}
+.cuerpo_debajoMenuDerecho{
+  width: 60%;
+  height: 500px;
+  background-color: red;
+}
+
+
 
   /*eliminados*/
 

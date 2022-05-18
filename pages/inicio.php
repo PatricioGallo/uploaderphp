@@ -44,7 +44,7 @@ header("Location:inicio.php");
       <a href=" <?php echo "user/".$id."/".$usuario.".php"; ?> "><img src="<?php echo "user/".$id."/perfil/perfil.jpg" ?> " alt=""></a>
     </div>
     <div class="header_nombre">
-      <a href="<?php echo "user/".$id."/".$usuario.".php"; ?> "> <h3> <?php echo $nombre_user." ".$apellido_user; ?> </h3> </a>
+      <a href="<?php echo "user/".$id."/".$usuario.".php"; ?> "> <h3> <?php echo $nombre_user; ?> </h3> </a>
     </div>
   </header>
 

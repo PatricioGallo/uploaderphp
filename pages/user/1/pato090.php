@@ -1,4 +1,4 @@
-<?php $id_perfil=50;?>
+<?php $id_perfil=1;?>
 
 
 
@@ -66,10 +66,24 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
       <div class="portada_nombre">
         <h2><?php echo $nombre_perfil." ".$apellido_perfil; ?> </h2>
       </div>
+      <div class="cuerpo_lineaPC"></div>
+      <div class="botones_portada">
+        <a href="#"> <div class="boton_deLaPortada"><h3 style="color:green;"> Publicaciones </h3></div> </a>
+        <a href="#"> <div class="boton_deLaPortada"><h3> Archivos Subidos </h3></div> </a>
+        <a href="#"> <div class="boton_deLaPortada"><h3> Amigos </h3></div> </a>
+
+      </div>
+
     </div>
 
     <div class="cuerpo_debajoPortadaPC">
-      <div class="cuerpo_linea"></div>
+
+      <div class="cuerpo_debajoMenuIzquierdo">
+
+      </div>
+      <div class="cuerpo_debajoMenuDerecho">
+
+      </div>
     </div>
 
     <div class="cuerpo_debajoPortada">
