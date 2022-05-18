@@ -683,7 +683,7 @@ body {
 
 
   .cuerpo_paraPC{
-    margin-top: 10px;
+    margin-top: 20px;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -691,7 +691,7 @@ body {
 
 
   .cuerpo_publicacion {
-    margin-top: 10px;
+
     width: 100%;
     height: 50px;
     background-color: white;
@@ -980,16 +980,56 @@ body {
 }
 .cuerpo_debajoMenuIzquierdo{
   width: 40%;
-  height: 500px;
-  background-color: green;
+  display: flex;
+  flex-direction: column;
+
 }
 .cuerpo_debajoMenuDerecho{
   width: 60%;
-  height: 500px;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
+.menu_izquierdo{
+  width: 100%;
+  height: 400px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 13px #888888;
+  margin-top: 20px;
+}
 
+.cuerpo_debajoMenuDerecho .cuerpo_archivossubidos {
+  width: 100%;
+  /*height: 400px;*/
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 13px #888888;
+}
+
+.cuerpo_debajoMenuDerecho .archivos_perfil {
+  width: 94%;
+  margin-left: 2%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.cuerpo_debajoMenuDerecho .archivos_perfil img {
+  margin-top: 7px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
   /*eliminados*/
 

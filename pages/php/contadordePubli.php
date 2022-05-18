@@ -24,7 +24,7 @@ $contador_publicaciones = 0;
   foreach ($listatabla as $lista) {
 
     if($id_perfil== $lista['id_user']){
-$contador_publicaciones = $contador_archivosSubidos +1;
+$contador_publicaciones = $contador_publicaciones +1;
 }
 
 }

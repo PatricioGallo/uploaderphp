@@ -27,6 +27,16 @@ include("../../php/verperfil.php");//incluir items del usuario de la web perfil
 include("../../php/itemspubli.php");//incluir items de la publicacion
 include("../../php/contadordePubli.php");//incluir contador de publicacion
 
+if(!empty ($_POST['contenido']) ){ //si no esta vacio el post
+
+  $contenido = $_POST['contenido'];
+  $listaSQL= $conexion ->prepare("INSERT INTO `publicaciones` (`id_user`, `user`, `nombre`, `apellido`, `contenido`) VALUES ( '$id_perfil', '$usuario_perfil', '$nombre_perfil', '$apellido_perfil', '$contenido')");
+  $listaSQL ->execute();
+
+header("Location:../../inicio.php");
+}
+
+
  ?>
 
 
@@ -79,12 +89,101 @@ include("../../php/contadordePubli.php");//incluir contador de publicacion
     <div class="cuerpo_debajoPortadaPC">
 
       <div class="cuerpo_debajoMenuIzquierdo">
+        <div class="menu_izquierdo">
+          <h2>Informacion</h2>
+
+
+              <p>Tipo de cuenta: <?php
+              if ($tipoDeCuenta==0) {
+                  echo "Normal</p>";
+              }elseif ($tipoDeCuenta==1) {
+                  echo "Premium</p>";
+              }elseif ($tipoDeCuenta==2) {
+                  echo "Admin</p>";
+              }
+
+                ?>
+
+
+              <p>Cantidad de gigas disponibles: <?php echo " ".$contador_gigas;
+
+              if ($tipoDeCuenta==0) {
+                  echo " "."de 3 Gb</p>";
+              }elseif ($tipoDeCuenta==1) {
+                  echo " "."de 10 Gb</p>";
+              }elseif ($tipoDeCuenta==2) {
+                  echo " "."de ilimitado</p>";
+              }
+              ?>
+
+
+              <p>Cantidad publicaciones realizadas: <?php echo " ".$contador_publicaciones; ?></p>
+
+
+
+              <p>Cantidad de archivos subidos: <?php echo " ".$contador_archivosSubidos; ?></p>
+
+
+              <?php if ($id_perfil == $_SESSION["id"]) { ?>
+
+                          <button type="button" name="button">Editar detalles</button>
+              <?php  }  ?>
+        </div>
 
       </div>
       <div class="cuerpo_debajoMenuDerecho">
 
+      <?php if ($id_perfil == $_SESSION["id"]) { ?>
+        <div class="cuerpo_publicacion">
+           <form  action="" method="post">
+           <div class="publicacion_foto">
+             <a href="<?php echo $usuario_perfil.".php"; ?>  "><img src="perfil/perfil.jpg" alt=""></a>
+           </div>
+           <div class="publicacion_textoPC">
+              <input type="text" name="contenido" value="" placeholder="¿Que estas pensando?" >
+              <button type="submit" name="enviar">Enviar</button>
+           </div>
+           </form>
+         </div>
+        <?php  }  ?>
+         <?php
+
+         foreach ($listatabla as $lista) {
+
+           $nombre_pu= $lista['nombre'];
+           $apellido_pu= $lista['apellido'];
+           $mg= $lista['mg'];
+           $contenido= $lista['contenido'];
+           $id_user = $lista['id_user'];
+           ?>
+
+     <?php if ($id_user == $id_perfil){ //corregir para hacer web unica?>
+
+
+
+           <div class="cuerpo_archivossubidos">
+             <div class="archivos_perfil">
+               <img src="<?php echo "perfil/perfil.jpg" ?>" alt="">
+               <h4> <?php echo $nombre_pu." ".$apellido_pu; ?> </h4>
+             </div>
+             <div class="archivos_contenido">
+                 <?php echo $contenido; ?>
+             </div>
+             <div class="archivos_footer">
+
+             </div>
+           </div>
+     <?php } ?>
+
+         <?php }?>
+
+
       </div>
     </div>
+
+
+
+
 
     <div class="cuerpo_debajoPortada">
       <div class="cuerpo_usuario">
