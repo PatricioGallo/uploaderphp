@@ -699,8 +699,8 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    border: grey 1px solid;
-    box-shadow: 2px 2px 18px #888888;
+
+    box-shadow: 2px 2px 13px #888888;
      }
 
   .cuerpo_publicacion form {
@@ -772,8 +772,8 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    border: grey 1px solid;
-    box-shadow: 1px 1px 18px #888888;
+
+    box-shadow: 1px 1px 13px #888888;
   }
 
   .cuerpo_paraPC .archivos_perfil {
