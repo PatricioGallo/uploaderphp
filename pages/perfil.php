@@ -23,12 +23,6 @@
 
 
 
-
-
-
-
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -133,6 +127,10 @@ header("Location:../../inicio.php");
 
               <p>Cantidad de archivos subidos: <?php echo " ".$contador_archivosSubidos; ?></p>
 
+
+              <?php if ($id_perfil == $_SESSION["id"]) { ?>
+                    <a href="">  <button type="button" name="button">Editar Perfil</button></a>
+              <?php  }  ?>
 
               <?php if ($id_perfil == $_SESSION["id"]) { ?>
 
