@@ -125,6 +125,10 @@ header("Location:../../inicio.php");
 
 
               <?php if ($id_perfil == $_SESSION["id"]) { ?>
+                    <a href="">  <button type="button" name="button">Editar Perfil</button></a>
+              <?php  }  ?>
+
+              <?php if ($id_perfil == $_SESSION["id"]) { ?>
 
                           <button type="button" name="button">Editar detalles</button>
               <?php  }  ?>
