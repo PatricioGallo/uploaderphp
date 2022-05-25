@@ -1,18 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $id_perfil=3;?>
 
 
 
@@ -99,7 +85,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
   <?php
   if ($_SESSION["id"] == $id_perfil) {?>
   <div class="menu_archivos">
-    <button type="button" name="button">Subir +</button>
+    <a href="../../modperfil/subir.php"> <button type="button" name="button">Subir +</button></a>
   </div>
   <div class="cuerpo_linea"></div>
 <?php } ?>

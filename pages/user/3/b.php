@@ -1,19 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $id_perfil=3;?>
 
 
 
@@ -96,7 +81,7 @@ header("Location:../../inicio.php");
     </div>
 
 
-<!--                    CUERPO PARA PC                              -->
+<!--                    CUERPO PARA PC                              -->    
 
     <div class="cuerpo_debajoPortadaPC">
 

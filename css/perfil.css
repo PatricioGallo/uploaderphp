@@ -599,6 +599,11 @@ body {
 .cuerpo_lineaPC{
   display: none;
 }
+
+.cuerpo_debajoPortadaArchivos{
+  display: none;
+}
+
   /*------fin eliminacion---*/
   /*---------------------------------FIN CELULARES-------------------------------*/
 }
@@ -673,7 +678,7 @@ body {
     flex-direction: ROW;
   }
 
-  /*--INICIO--*/
+  /* -- INICIO --*/
   .cuerpo_menu {
     margin-top: 10px;
     width: 30%;
@@ -891,7 +896,7 @@ body {
 }
 
 
-/*PERFIL*/
+/*---PERFIL---*/
 
 .cuerpo_debajoPortada{
   display: none;
@@ -976,7 +981,6 @@ body {
   margin-top: 490px;
   display: flex;
   flex-direction: row;
-  height: 500px;
 }
 .cuerpo_debajoMenuIzquierdo{
   width: 40%;
@@ -1053,6 +1057,68 @@ button {
   cursor: pointer;
   font-size: 16px;
 }
+
+
+
+/*--ARCHIVOS--*/
+
+.cuerpo_debajoPortadaArchivos{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 510px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 13px #888888;
+  margin-bottom: 20px;
+}
+.menu_archivos{
+  width: 100%;
+}
+.menu_archivos button{
+  width: 10%;
+}
+
+.contenido_archivos{
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.contenido_archivos h2{
+  margin-bottom: 20px;
+}
+
+ table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+ table td,  th {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+ table tr:nth-child(even){background-color: #f2f2f2;}
+
+ table tr:hover {background-color: #ddd;}
+
+ table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+table tr img {
+width: 40px;
+height: 40px;
+}
+
 
 
   /*eliminados*/

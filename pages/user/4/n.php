@@ -1,19 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $id_perfil=4;?>
 
 
 
@@ -87,16 +72,13 @@ header("Location:../../inicio.php");
       </div>
       <div class="cuerpo_lineaPC"></div>
       <div class="botones_portada">
-        <a href=""> <div class="boton_deLaPortada"><h3 style="color:green;"> Publicaciones </h3></div> </a>
-        <a href=" <?php echo $usuario_perfil."Archivos.php" ?>"> <div class="boton_deLaPortada"><h3> Archivos Subidos </h3></div> </a>
+        <a href="#"> <div class="boton_deLaPortada"><h3 style="color:green;"> Publicaciones </h3></div> </a>
+        <a href="#"> <div class="boton_deLaPortada"><h3> Archivos Subidos </h3></div> </a>
         <a href="#"> <div class="boton_deLaPortada"><h3> Amigos </h3></div> </a>
 
       </div>
 
     </div>
-
-
-<!--                    CUERPO PARA PC                              -->
 
     <div class="cuerpo_debajoPortadaPC">
 
@@ -199,7 +181,7 @@ header("Location:../../inicio.php");
 
 
 
-<!--                    CUERPO PARA CELULAR                              -->
+
 
     <div class="cuerpo_debajoPortada">
       <div class="cuerpo_usuario">
