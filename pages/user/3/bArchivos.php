@@ -1,24 +1,4 @@
 <?php $id_perfil=3;?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -85,13 +65,50 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
   <?php
   if ($_SESSION["id"] == $id_perfil) {?>
   <div class="menu_archivos">
-    <a href="../../modperfil/subir.php"> <button type="button" name="button">Subir +</button></a>
+    <a href="../../modperfil/subir.php"> <button type="button" name="button">Subir +</button> </a>
   </div>
   <div class="cuerpo_linea"></div>
 <?php } ?>
 
   <div class="contenido_archivos">
     <h2>Mis archivos</h2>
+
+
+
+    <?php
+    if ($_SESSION["id"] != $id_perfil) {
+      ?>
+
+      <table >
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Modificado</th>
+        <th>Tamaño</th>
+        <th>Tipo</th>
+        <th></th>
+
+      </tr>
+
+    <?php  }elseif ($_SESSION["id"] == $id_perfil) {
+              ?>
+                  <table >
+                  <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Modificado</th>
+                    <th>Tamaño</th>
+                    <th>Tipo</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+
+                <?php } ?>
+
+
+
 
 
 
@@ -112,18 +129,6 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
            if ($id_userArchivo == $id_perfil && $estado_archivo=="Publico"){
             ?>
-
-            <table >
-            <tr>
-              <th></th>
-              <th>Nombre</th>
-              <th>Fecha</th>
-              <th>Modificado</th>
-              <th>Tamaño</th>
-              <th>Tipo</th>
-              <th></th>
-
-            </tr>
 
             <tr>
 
@@ -157,11 +162,11 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                      ?>
 
 
-                     <td><?php echo $nombre_archivo ?></td>
+                     <td> <a href="#"> <?php echo $nombre_archivo ?> </a></td>
                      <td>fecha</td>
                      <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
                      <td>tamano</td>
-                     <td><?php echo $estado_archivo ?></td>
+                     <td> <a href="#"> <?php echo $estado_archivo ?></a></td>
                      <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
 
 
@@ -171,17 +176,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
           <?php } }elseif ($_SESSION["id"] == $id_perfil) {
                       if ($id_userArchivo == $id_perfil){?>
 
-                        <table >
-                        <tr>
-                          <th></th>
-                          <th>Nombre</th>
-                          <th>Fecha</th>
-                          <th>Modificado</th>
-                          <th>Tamaño</th>
-                          <th>Tipo</th>
-                          <th></th>
-                          <th></th>
-                        </tr>
+
                         <tr>
                                 <?php
                                 include("../../php/formatos.php");//incluir formatos
@@ -212,11 +207,11 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                                  ?>
 
 
-                              <td><?php echo $nombre_archivo ?></td>
-                              <td>fecha</td>
-                              <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
-                              <td>tamano</td>
-                              <td><?php echo $estado_archivo ?></td>
+                                 <td> <a href="#"> <?php echo $nombre_archivo ?> </a></td>
+                                 <td>fecha</td>
+                                 <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
+                                 <td>tamano</td>
+                                 <td> <a href="#"> <?php echo $estado_archivo ?></a></td>
                               <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
                               <td> <a href="#"> <img src="../../../media/imagenes/eliminar.webp" alt=""> </a></td>
 

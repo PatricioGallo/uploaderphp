@@ -109,6 +109,46 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
 
 
+    <?php
+    if ($_SESSION["id"] != $id_perfil) {
+
+
+     if ($id_userArchivo == $id_perfil && $estado_archivo=="Publico"){
+      ?>
+
+      <table >
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Modificado</th>
+        <th>Tamaño</th>
+        <th>Tipo</th>
+        <th></th>
+
+      </tr>
+
+    <?php } }elseif ($_SESSION["id"] == $id_perfil) {
+                if ($id_userArchivo == $id_perfil){?>
+                  <table >
+                  <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Modificado</th>
+                    <th>Tamaño</th>
+                    <th>Tipo</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+
+                <?php }} ?>
+
+
+
+
+
+
 
             <?php
 
@@ -126,18 +166,6 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
            if ($id_userArchivo == $id_perfil && $estado_archivo=="Publico"){
             ?>
-
-            <table >
-            <tr>
-              <th></th>
-              <th>Nombre</th>
-              <th>Fecha</th>
-              <th>Modificado</th>
-              <th>Tamaño</th>
-              <th>Tipo</th>
-              <th></th>
-
-            </tr>
 
             <tr>
 
@@ -185,17 +213,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
           <?php } }elseif ($_SESSION["id"] == $id_perfil) {
                       if ($id_userArchivo == $id_perfil){?>
 
-                        <table >
-                        <tr>
-                          <th></th>
-                          <th>Nombre</th>
-                          <th>Fecha</th>
-                          <th>Modificado</th>
-                          <th>Tamaño</th>
-                          <th>Tipo</th>
-                          <th></th>
-                          <th></th>
-                        </tr>
+
                         <tr>
                                 <?php
                                 include("../../php/formatos.php");//incluir formatos
