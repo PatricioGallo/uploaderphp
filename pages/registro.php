@@ -24,6 +24,7 @@ include("php/registrarse.php"); //incluyo el registro
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="shortcut icon" href="../media/imagenes/icono.png">
 
   <title>Uploader / Registro</title>
 </head>

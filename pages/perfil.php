@@ -26,8 +26,6 @@
 
 
 
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -61,6 +59,8 @@ header("Location:../../inicio.php");
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../../../media/imagenes/icono.png">
+
   <title>UPLOADER / Perfil</title>
 </head>
 

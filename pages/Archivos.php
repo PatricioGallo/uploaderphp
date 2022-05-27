@@ -24,15 +24,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -55,6 +46,8 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../../../media/imagenes/icono.png">
+
   <title>UPLOADER / Perfil</title>
 </head>
 
@@ -99,7 +92,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
   <?php
   if ($_SESSION["id"] == $id_perfil) {?>
   <div class="menu_archivos">
-    <button type="button" name="button">Subir +</button>
+    <a href="../../modperfil/subir.php"> <button type="button" name="button">Subir +</button> </a>
   </div>
   <div class="cuerpo_linea"></div>
 <?php } ?>
@@ -111,9 +104,6 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
     <?php
     if ($_SESSION["id"] != $id_perfil) {
-
-
-     if ($id_userArchivo == $id_perfil && $estado_archivo=="Publico"){
       ?>
 
       <table >
@@ -128,8 +118,8 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
       </tr>
 
-    <?php } }elseif ($_SESSION["id"] == $id_perfil) {
-                if ($id_userArchivo == $id_perfil){?>
+    <?php  }elseif ($_SESSION["id"] == $id_perfil) {
+              ?>
                   <table >
                   <tr>
                     <th></th>
@@ -142,7 +132,7 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                     <th></th>
                   </tr>
 
-                <?php }} ?>
+                <?php } ?>
 
 
 
@@ -199,11 +189,11 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                      ?>
 
 
-                     <td><?php echo $nombre_archivo ?></td>
+                     <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $nombre_archivo ?> </a></td>
                      <td>fecha</td>
                      <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
                      <td>tamano</td>
-                     <td><?php echo $estado_archivo ?></td>
+                     <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $estado_archivo ?></a></td>
                      <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
 
 
@@ -244,11 +234,11 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                                  ?>
 
 
-                              <td><?php echo $nombre_archivo ?></td>
-                              <td>fecha</td>
-                              <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
-                              <td>tamano</td>
-                              <td><?php echo $estado_archivo ?></td>
+                                 <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $nombre_archivo ?> </a></td>
+                                 <td>fecha</td>
+                                 <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
+                                 <td>tamano</td>
+                                 <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $estado_archivo ?></a></td>
                               <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
                               <td> <a href="#"> <img src="../../../media/imagenes/eliminar.webp" alt=""> </a></td>
 

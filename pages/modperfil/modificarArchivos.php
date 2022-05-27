@@ -24,6 +24,8 @@ include("../php/guardar.php"); //guardar archivos subidos archivos a una carpeta
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../../media/imagenes/icono.png">
+
   <title>UPLOADER / Subir archivos</title>
 </head>
 

@@ -51,6 +51,7 @@ if(!empty ($_POST['user']) && !empty ($_POST['pswd'])){ //si no esta vacio el po
   <link rel="stylesheet" href="css/index.css">
 
   <title>Uploader</title>
+  <link rel="shortcut icon" href="media/imagenes/icono.png">
 </head>
 
 <body>
