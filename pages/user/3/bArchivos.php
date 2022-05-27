@@ -162,11 +162,11 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                      ?>
 
 
-                     <td> <a href="#"> <?php echo $nombre_archivo ?> </a></td>
+                     <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $nombre_archivo ?> </a></td>
                      <td>fecha</td>
                      <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
                      <td>tamano</td>
-                     <td> <a href="#"> <?php echo $estado_archivo ?></a></td>
+                     <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $estado_archivo ?></a></td>
                      <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
 
 
@@ -207,11 +207,11 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
                                  ?>
 
 
-                                 <td> <a href="#"> <?php echo $nombre_archivo ?> </a></td>
+                                 <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $nombre_archivo ?> </a></td>
                                  <td>fecha</td>
                                  <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
                                  <td>tamano</td>
-                                 <td> <a href="#"> <?php echo $estado_archivo ?></a></td>
+                                 <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $estado_archivo ?></a></td>
                               <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
                               <td> <a href="#"> <img src="../../../media/imagenes/eliminar.webp" alt=""> </a></td>
 
