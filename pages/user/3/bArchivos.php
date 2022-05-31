@@ -125,6 +125,7 @@ if($_POST){
                     <th>Tipo</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                   </tr>
 
                 <?php } ?>
@@ -204,7 +205,7 @@ if($_POST){
                        ?>
                      </td>
                      <td>  <?php echo $estado_archivo ?></td>
-                     <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
+                     <td><a href="../../descarga.php?nombre= <?php echo $nombre_perfil ?>&apellido=<?php echo $apellido_perfil ?>&id=<?php echo $id_perfil ?>&nombre_archivo=<?php echo $nombre_archivo ?>" target="_blank"   > <img src="../../../media/imagenes/link.png" alt=""> </a></td>
 
 
                 </tr>
@@ -265,6 +266,7 @@ if($_POST){
                                  </td>
                                  <td> <a href="../../modperfil/modificarArchivos.php" title="Modificar"> <?php echo $estado_archivo ?></a></td>
                               <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
+                              <td><a href="../../descarga.php?nombre= <?php echo $nombre_perfil ?>&apellido=<?php echo $apellido_perfil ?>&id=<?php echo $id_perfil ?>&nombre_archivo=<?php echo $nombre_archivo ?>" target="_blank"  > <img src="../../../media/imagenes/link.png" alt=""> </a></td>
                               <td> <form  action="<?php echo $nombre_perfil."Archivos.php" ?>" method="post">
                               <input type="hidden" name="nombre_archivo" value="<?php echo $nombre_archivo; ?>">
                               <input type="hidden" name="id" value="<?php echo $nombre_archivo; ?>">
