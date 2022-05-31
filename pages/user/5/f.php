@@ -13,11 +13,6 @@
 
 
 
-
-
-
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
@@ -51,6 +46,8 @@ header("Location:../../inicio.php");
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../../../media/imagenes/icono.png">
+
   <title>UPLOADER / Perfil</title>
 </head>
 
@@ -107,14 +104,26 @@ header("Location:../../inicio.php");
                 ?>
 
 
-              <p>Cantidad de gigas disponibles: <?php echo " ".$contador_gigas;
+              <p>Cantidad de gigas disponibles: <?php
+
+               if (0<= $contador_gigas && $contador_gigas < 1024){
+                  echo " ".$contador_gigas." Bytes ";
+                }else if( 1024 <= $contador_gigas && $contador_gigas < pow(1024, 2)){
+                  echo " ".round($contador_gigas/1024,2) ." Kb ";
+                }else if( pow(1024,2) <= $contador_gigas && $contador_gigas< pow(1024, 3)){
+                  echo " ".round($contador_gigas/pow(1024,2),2) ." Mb ";
+                }else if( pow(1024,3) <= $contador_gigas){
+                  echo " ".round($contador_gigas/pow(1024,3),2) ." Gb ";
+                }
+
+
 
               if ($tipoDeCuenta==0) {
-                  echo " "."de 3 Gb</p>";
+                  echo " "." de 3 Gb</p>";
               }elseif ($tipoDeCuenta==1) {
-                  echo " "."de 10 Gb</p>";
+                  echo " "." de 10 Gb</p>";
               }elseif ($tipoDeCuenta==2) {
-                  echo " "."de ilimitado</p>";
+                  echo " "." de ilimitado</p>";
               }
               ?>
 

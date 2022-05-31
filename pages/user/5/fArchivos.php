@@ -6,6 +6,26 @@ include("../../../config/db.php"); //incluir database
 include("../../php/verperfil.php");//incluir items del usuario de la web perfil
 include("../../php/contadordePubli.php");//incluir contador de publicacion
 include("../../php/itemsarchivos.php");//incluir items de la archivos
+//include("../../php/borrar.php");
+
+
+//Borrar archivos
+if($_POST){
+
+  if($_POST['nombre_archivo']){
+    $nombre_archivoSubido = $_POST['nombre_archivo'];
+    $id_PublicacionBorrar =$_POST['id_publicacion'];
+    $ruta_archivoEliminado = "media/".$nombre_archivoSubido;
+    if (file_exists($ruta_archivoEliminado)) {unlink($ruta_archivoEliminado);}
+    $listaSQL= $conexion ->prepare("DELETE FROM `archivos` WHERE id='$id_PublicacionBorrar'  ");
+    $listaSQL ->execute();
+
+
+    header("Refresh:0.01");
+  }
+
+}
+
  ?>
 
 
@@ -122,6 +142,9 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
               $id_userArchivo= $lista['id_userArchivo'];
               $nombre_archivo= $lista['nombre_archivo'];
               $estado_archivo= $lista['estado'];
+              $id_publicacion = $lista['id'];
+              $fecha_publicacion = $lista['fecha'];
+              $tamano_archivo = $lista['tamano_archivo']
               ?>
 
 
@@ -165,9 +188,21 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
 
                      <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $nombre_archivo ?> </a></td>
-                     <td>fecha</td>
+                    <td><?php echo $fecha_publicacion; ?></td>
                      <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
-                     <td>tamano</td>
+                     <td>
+                       <?php if (0< $tamano_archivo && $tamano_archivo < 1024){
+                           echo $tamano_archivo." Bytes";
+                         }else if( 1024 <= $tamano_archivo && $tamano_archivo < pow(1024,2)){
+                           echo round($tamano_archivo/1024,1) ." Kb";
+                         }else if( pow(1024,2) <= $tamano_archivo && $tamano_archivo< pow(1024, 3)){
+                           echo round($tamano_archivo/pow(1024,2),2) ." Mb";
+                         }else if( pow(1024,3) <= $tamano_archivo){
+                           echo round($tamano_archivo/pow(1024,3),3) ." Gb";
+                         }
+
+                       ?>
+                     </td>
                      <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $estado_archivo ?></a></td>
                      <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
 
@@ -186,36 +221,57 @@ include("../../php/itemsarchivos.php");//incluir items de la archivos
 
 
                                 if(in_array($extension, $formatos_imagenes) ) {     //verifica las extensiones y hace algo distinto en cada caso
-                                    ?> <td> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="<?php echo "media/".$nombre_archivo; ?>" alt=""></a></td><?php
+                                    ?> <td> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER" ><img src="<?php echo "media/".$nombre_archivo; ?>" alt=""></a></td><?php
 
                                 }elseif (in_array($extension, $formatos_videos)) {
-                                  ?> <td> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  > </a> </td><?php
+                                  ?> <td> <a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER"  > </a> </td><?php
 
                                 }elseif (in_array($extension, $formatos_pp)) {
-                                    ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/pp.jpg" alt=""></a></td><?php
+                                    ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER"  ><img src="../../../media/imagenes/pp.jpg" alt=""></a></td><?php
 
                                 }elseif (in_array($extension, $formatos_word)) {
-                                  ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/word.jpg" alt=""></a></td><?php
+                                  ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER"  ><img src="../../../media/imagenes/word.jpg" alt=""></a></td><?php
 
                                 }elseif (in_array($extension, $formatos_pdf)) {
-                                    ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/pdf.jpg" alt=""></a></td><?php
+                                    ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER"  ><img src="../../../media/imagenes/pdf.jpg" alt=""></a></td><?php
 
                                 }elseif (in_array($extension, $formatos_excel)) {
-                                    ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/excel.jpg" alt=""></a></td><?php
+                                    ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER"  ><img src="../../../media/imagenes/excel.jpg" alt=""></a></td><?php
 
                                 }else {
-                                  ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank"  ><img src="../../../media/imagenes/archivos.jpg" alt=""></a> </td><?php
+                                  ?> <td><a href="media/<?php echo $nombre_archivo; ?>" target="_blank" title="VER"  ><img src="../../../media/imagenes/archivos.jpg" alt=""></a> </td><?php
                                 }
                                  ?>
 
 
-                                 <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $nombre_archivo ?> </a></td>
-                                 <td>fecha</td>
+                                 <td> <a href="../../modperfil/modificarArchivos.php" title="Modificar"> <?php echo $nombre_archivo ?> </a></td>
+                                 <td><?php echo $fecha_publicacion; ?></td>
                                  <td><?php echo $nombre_perfil." ".$apellido_perfil; ?></td>
-                                 <td>tamano</td>
-                                 <td> <a href="../../modperfil/modificarArchivos.php"> <?php echo $estado_archivo ?></a></td>
+                                 <td>
+                                    <?php if (0< $tamano_archivo && $tamano_archivo < 1024){
+                                        echo $tamano_archivo." Bytes";
+                                      }else if( 1024 <= $tamano_archivo && $tamano_archivo < pow(1024,2)){
+                                        echo round($tamano_archivo/1024,1) ." Kb";
+                                      }else if( pow(1024,2) <= $tamano_archivo && $tamano_archivo< pow(1024, 3)){
+                                        echo round($tamano_archivo/pow(1024,2),2) ." Mb";
+                                      }else if( pow(1024,3) <= $tamano_archivo){
+                                        echo round($tamano_archivo/pow(1024,3),3) ." Gb";
+                                      }
+
+                                    ?>
+
+
+
+                                 </td>
+                                 <td> <a href="../../modperfil/modificarArchivos.php" title="Modificar"> <?php echo $estado_archivo ?></a></td>
                               <td><a href="media/<?php echo $nombre_archivo; ?>" download  > <img src="../../../media/imagenes/descarga.jpg" alt=""> </a></td>
-                              <td> <a href="#"> <img src="../../../media/imagenes/eliminar.webp" alt=""> </a></td>
+                              <td> <form  action="<?php echo $nombre_perfil."Archivos.php" ?>" method="post">
+                              <input type="hidden" name="nombre_archivo" value="<?php echo $nombre_archivo; ?>">
+                              <input type="hidden" name="id" value="<?php echo $nombre_archivo; ?>">
+                              <input type="hidden" name="id_publicacion" value="<?php echo $id_publicacion; ?>">
+                              <button type="submit" name="eliminar" id="eliminar">  <img src="../../../media/imagenes/eliminar.webp" alt=""></button>
+                               </form>
+                             </td>
 
                             </tr>
 

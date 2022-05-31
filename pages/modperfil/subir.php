@@ -99,7 +99,10 @@ include("../php/guardar.php"); //guardar archivos subidos archivos a una carpeta
             ?>
             <div class="contenido_subirArchivos"> <?php
           echo "<p>El archivo: ".$nombre_archivoSubido." se guardo con exito</p>";
-          } ?>
+        }else if($subido==3){ ?>
+          <div class="contenido_subirArchivos"> <?php
+        echo "<p>ERROR!! El archivo: ".$nombre_archivoSubido."  ya existe, por favor elija otro archivo. </p>";
+      } ?>
         </div>
 
 
