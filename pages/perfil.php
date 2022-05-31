@@ -28,12 +28,6 @@
 
 
 
-
-
-
-
-
-
 <?php
 session_start(); //incio de cesion
 include("../../../config/db.php"); //incluir database
